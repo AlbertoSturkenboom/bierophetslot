@@ -219,6 +219,13 @@
     color:var(--copper-dark);
     font-variation-settings:'opsz' 60,'SOFT' 30,'WONK' 1;
   }
+  .details .lead{
+    font-size:1rem;
+    opacity:.85;
+    max-width:34rem;
+    margin:-.9rem 0 1.75rem;
+  }
+  .details .lead a{color:var(--copper-dark);text-decoration-color:var(--copper);}
   .info-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
@@ -252,6 +259,14 @@
     text-align:center;
     box-shadow:var(--shadow);
   }
+  .ticket-box .tier-label{
+    font-size:.72rem;
+    text-transform:uppercase;
+    letter-spacing:.09em;
+    font-weight:600;
+    color:var(--copper-light);
+    margin-bottom:.5rem;
+  }
   .ticket-box .price{
     font-family:'Fraunces',Georgia,serif;
     font-size:3.2rem;
@@ -261,11 +276,16 @@
   }
   .ticket-box ul{
     list-style:none;
-    margin:1.1rem 0 1.6rem;
+    margin:1.1rem 0 1.1rem;
     font-size:.95rem;
     opacity:.9;
   }
   .ticket-box ul li{margin-bottom:.35rem;}
+  .ticket-box .note{
+    font-size:.82rem;
+    opacity:.7;
+    margin-bottom:1.5rem;
+  }
 
   /* ============ STAYOKAY ============ */
 
@@ -327,6 +347,7 @@
 <!-- ============ INFO ============ -->
 <div class="details" id="info">
   <h2>Praktische info</h2>
+  <p class="lead">Tien lokale en nationale brouwerijen brengen hun nieuwste en beste brouwsels mee &mdash; van <a href="https://brouwerijzeglis.nl/" target="_blank" rel="noopener">Brouwerij Zeglis</a> tot namen die nog volgen.</p>
   <div class="info-grid">
     <div class="info-card">
       <div class="label">Datum</div>
@@ -342,17 +363,18 @@
     </div>
     <div class="info-card">
       <div class="label">Brouwerijen</div>
-      <div class="value">10 verschillende bieren</div>
+      <div class="value">10 brouwerijen &middot; Zeglis bevestigd</div>
     </div>
   </div>
 
   <div class="ticket-box" id="tickets">
+    <div class="tier-label">Vroegboekprijs t/m 31 december 2026</div>
     <div class="price">&euro;10</div>
     <ul>
-      <li>Entree</li>
-      <li>1&times; proefglas (15 cl)</li>
+      <li>Entree + proefglas (mag je houden)</li>
       <li>2 muntjes &agrave; &euro;3,- p/st.</li>
     </ul>
+    <p class="note">Vanaf 1 januari 2027: reguliere entree &euro;12,50 (zelfde inhoud).</p>
     <a class="btn btn-primary" href="mailto:info@bierophetslot.nl">Kaarten via info@bierophetslot.nl</a>
   </div>
 </div>
@@ -360,8 +382,8 @@
 <!-- ============ STAYOKAY ============ -->
 <div class="stayokay">
   <h3>Overnachten bij Stayokay Heemskerk?</h3>
-  <p>Reserveer nu een plekje en krijg 25% korting op je overnachting rond het festivalweekend.</p>
-  <a class="btn btn-primary" href="#">Reserveer je overnachting</a>
+  <p>Boek je ticket v&oacute;&oacute;r 1 januari 2027 en krijg 25% korting op je overnachting in het kasteel op 7 maart 2027.</p>
+  <a class="btn btn-primary" href="https://www.stayokay.com/nl/hostel/heemskerk" target="_blank" rel="noopener">Reserveer je overnachting</a>
 </div>
 
 <footer>
