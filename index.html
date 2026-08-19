@@ -20,9 +20,12 @@
     --copper-light:#d98844;
     --copper-dark:#8f4e22;
     --moss:#5a6b4f;
+    --radius:10px;
+    --radius-sm:4px;
+    --shadow:0 4px 20px rgba(0,0,0,.08);
   }
 
-  *{box-sizing:border-box;margin:0;padding:0;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 
   html{scroll-behavior:smooth;}
 
@@ -30,7 +33,7 @@
     background:var(--stone-100);
     color:var(--stone-900);
     font-family:'Inter',system-ui,sans-serif;
-    line-height:1.5;
+    line-height:1.6;
     -webkit-font-smoothing:antialiased;
   }
 
@@ -141,7 +144,7 @@
   .btn{
     display:inline-block;
     padding:1.05rem 2.4rem;
-    border-radius:3px;
+    border-radius:var(--radius-sm);
     text-decoration:none;
     font-weight:600;
     font-size:1.02rem;
@@ -226,10 +229,10 @@
 
   .info-card{
     background:#fff;
-    border:1px solid #e4dccb;
     border-left:4px solid var(--copper);
     padding:1.1rem 1.3rem;
-    border-radius:4px;
+    border-radius:var(--radius-sm);
+    box-shadow:var(--shadow);
   }
   .info-card .label{
     font-size:.72rem;
@@ -244,9 +247,10 @@
   .ticket-box{
     background:var(--stone-800);
     color:var(--stone-100);
-    border-radius:6px;
+    border-radius:var(--radius);
     padding:2.2rem;
     text-align:center;
+    box-shadow:var(--shadow);
   }
   .ticket-box .price{
     font-family:'Fraunces',Georgia,serif;
