@@ -1,92 +1,220 @@
-
 <!DOCTYPE html>
 <html lang="nl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bier op 't Slot Festival</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Inter:wght@400;500;600&display=swap');
+<title>Bier op 't Slot Festival — 7 maart 2027, Slot Assumburg</title>
+<meta name="description" content="Proef bieren van 10 brouwerijen in het 15e-eeuwse Slot Assumburg. Zondag 7 maart 2027, 14:00–22:00 uur. Entree €10.">
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,400..900,0..100,0..1&family=Inter:wght@400;500;600;700&display=swap">
+
+<style>
   :root{
-    --stone-950:#1c1a17;
+    --stone-950:#14120f;
+    --stone-900:#1c1a17;
     --stone-800:#332e28;
     --stone-100:#f1ece2;
-    --copper:#b5652f;
+    --copper:#c06a2c;
+    --copper-light:#d98844;
     --copper-dark:#8f4e22;
     --moss:#5a6b4f;
   }
+
   *{box-sizing:border-box;margin:0;padding:0;}
+
+  html{scroll-behavior:smooth;}
+
   body{
     background:var(--stone-100);
-    color:var(--stone-950);
-    font-family:'Inter',sans-serif;
+    color:var(--stone-900);
+    font-family:'Inter',system-ui,sans-serif;
     line-height:1.5;
+    -webkit-font-smoothing:antialiased;
   }
-  h1,h2,h3{font-family:'Fraunces',serif;font-weight:700;}
 
-  header{
-    background:linear-gradient(180deg,var(--stone-950) 0%, var(--stone-800) 100%);
-    color:var(--stone-100);
-    padding:4rem 1.5rem 3rem;
-    text-align:center;
+  h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:700;}
+
+  /* ============ HERO ============ */
+
+  .hero{
     position:relative;
+    min-height:100vh;
+    min-height:100svh;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    align-items:center;
     overflow:hidden;
-  }
-  header::after{
-    content:"";
-    position:absolute;
-    bottom:0;left:0;right:0;height:6px;
-    background:repeating-linear-gradient(90deg,var(--copper) 0 20px, transparent 20px 40px);
-  }
-  .eyebrow{
-    letter-spacing:.15em;
-    text-transform:uppercase;
-    font-size:.8rem;
-    color:var(--copper);
-    margin-bottom:.75rem;
-  }
-  header h1{
-    font-size:clamp(2.2rem,6vw,3.6rem);
-    line-height:1.05;
-    margin-bottom:.75rem;
-  }
-  header p.sub{
-    font-size:1.1rem;
-    opacity:.85;
-    max-width:32rem;
-    margin:0 auto;
+    background:var(--stone-950);
+    padding:6rem 1.5rem 3.5rem;
+    text-align:center;
   }
 
-  .hero-img{
+  .hero-media{
+    position:absolute;
+    inset:0;
+    z-index:0;
+  }
+  .hero-photo{
     width:100%;
-    aspect-ratio:16/7;
+    height:100%;
+    object-fit:cover;
+    /* staande foto op smalle schermen: nadruk op toren en lucht */
+    object-position:center 26%;
+  }
+  @media(min-width:700px){
+    /* liggende foto op breed scherm: kasteel in beeld houden */
+    .hero-photo{object-position:center 42%;}
+  }
+
+  /* Donkere sluier zodat de tekst altijd leesbaar blijft */
+  .hero-scrim{
+    position:absolute;
+    inset:0;
+    z-index:1;
     background:
-      linear-gradient(180deg,rgba(28,26,23,.15),rgba(28,26,23,.55)),
-      url('https://commons.wikimedia.org/w/index.php?title=Special:Redirect/file/Slot-assumburg.jpg&width=1600') center/cover no-repeat,
-      var(--stone-800);
-    display:flex;
-    align-items:flex-end;
-    padding:1.5rem;
+      linear-gradient(to top,
+        rgba(20,18,15,.92) 0%,
+        rgba(20,18,15,.75) 22%,
+        rgba(20,18,15,.30) 48%,
+        rgba(20,18,15,.05) 70%,
+        rgba(20,18,15,.25) 100%);
   }
-  .hero-img span{
+
+  .hero-content{
+    position:relative;
+    z-index:2;
+    max-width:44rem;
     color:var(--stone-100);
-    font-size:.75rem;
-    opacity:.65;
-    background:rgba(28,26,23,.55);
-    padding:.2rem .5rem;
-    border-radius:3px;
   }
+
+  .hero .eyebrow{
+    font-size:.78rem;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    font-weight:600;
+    color:var(--copper-light);
+    margin-bottom:1.1rem;
+    text-shadow:0 1px 8px rgba(0,0,0,.6);
+  }
+
+  .hero h1{
+    font-size:clamp(2.6rem,9vw,5.2rem);
+    line-height:.95;
+    letter-spacing:-.02em;
+    font-variation-settings:'opsz' 144,'SOFT' 30,'WONK' 1;
+    margin-bottom:1rem;
+    text-shadow:0 2px 30px rgba(0,0,0,.55);
+  }
+
+  .hero .tagline{
+    font-family:'Fraunces',Georgia,serif;
+    font-weight:400;
+    font-style:italic;
+    font-variation-settings:'opsz' 72,'SOFT' 60,'WONK' 1;
+    font-size:clamp(1.15rem,3.4vw,1.6rem);
+    color:#fff;
+    opacity:.92;
+    margin-bottom:1.6rem;
+    text-shadow:0 1px 16px rgba(0,0,0,.6);
+  }
+
+  .hero .meta{
+    font-size:.95rem;
+    font-weight:500;
+    letter-spacing:.01em;
+    opacity:.85;
+    margin-bottom:2.2rem;
+    text-shadow:0 1px 10px rgba(0,0,0,.7);
+  }
+  .hero .meta .dot{margin:0 .55rem;color:var(--copper-light);}
+
+  .cta-row{
+    display:flex;
+    gap:.9rem;
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+
+  .btn{
+    display:inline-block;
+    padding:1.05rem 2.4rem;
+    border-radius:3px;
+    text-decoration:none;
+    font-weight:600;
+    font-size:1.02rem;
+    letter-spacing:.02em;
+    transition:background .18s ease,transform .18s ease,border-color .18s ease;
+  }
+  .btn:focus-visible{outline:3px solid var(--copper-light);outline-offset:3px;}
+
+  .btn-primary{
+    background:var(--copper);
+    color:#fff;
+    box-shadow:0 6px 24px rgba(0,0,0,.35);
+  }
+  .btn-primary:hover{background:var(--copper-light);transform:translateY(-2px);}
+
+  .btn-ghost{
+    background:rgba(241,236,226,.08);
+    color:var(--stone-100);
+    border:1.5px solid rgba(241,236,226,.55);
+    backdrop-filter:blur(4px);
+  }
+  .btn-ghost:hover{background:rgba(241,236,226,.18);border-color:#fff;transform:translateY(-2px);}
+
+  .scroll-cue{
+    position:relative;
+    z-index:2;
+    margin-top:2.6rem;
+    width:1px;
+    height:42px;
+    background:linear-gradient(to bottom,transparent,rgba(241,236,226,.7));
+  }
+
+  .photo-credit{
+    position:absolute;
+    right:.7rem;
+    bottom:.5rem;
+    z-index:2;
+    font-size:.68rem;
+    color:rgba(241,236,226,.45);
+  }
+
+  /* Opbouw bij laden */
+  .fade-up{
+    opacity:0;
+    transform:translateY(18px);
+    animation:fadeUp .9s cubic-bezier(.2,.7,.3,1) forwards;
+  }
+  .d1{animation-delay:.1s}
+  .d2{animation-delay:.25s}
+  .d3{animation-delay:.4s}
+  .d4{animation-delay:.55s}
+  .d5{animation-delay:.7s}
+
+  @keyframes fadeUp{to{opacity:1;transform:translateY(0);}}
+
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    .fade-up{animation:none;opacity:1;transform:none;}
+    .btn:hover{transform:none;}
+  }
+
+  /* ============ INFO ============ */
 
   .details{
     max-width:760px;
     margin:0 auto;
-    padding:3.5rem 1.5rem;
+    padding:4.5rem 1.5rem;
   }
   .details h2{
-    font-size:1.8rem;
-    margin-bottom:1.5rem;
+    font-size:1.9rem;
+    margin-bottom:1.6rem;
     color:var(--copper-dark);
+    font-variation-settings:'opsz' 60,'SOFT' 30,'WONK' 1;
   }
   .info-grid{
     display:grid;
@@ -95,6 +223,7 @@
     margin-bottom:2.5rem;
   }
   @media(max-width:520px){.info-grid{grid-template-columns:1fr;}}
+
   .info-card{
     background:#fff;
     border:1px solid #e4dccb;
@@ -103,59 +232,49 @@
     border-radius:4px;
   }
   .info-card .label{
-    font-size:.75rem;
+    font-size:.72rem;
     text-transform:uppercase;
-    letter-spacing:.08em;
+    letter-spacing:.1em;
     color:var(--moss);
+    font-weight:600;
     margin-bottom:.3rem;
   }
-  .info-card .value{
-    font-size:1.05rem;
-    font-weight:600;
-  }
+  .info-card .value{font-size:1.05rem;font-weight:600;}
 
   .ticket-box{
     background:var(--stone-800);
     color:var(--stone-100);
     border-radius:6px;
-    padding:2rem;
+    padding:2.2rem;
     text-align:center;
   }
   .ticket-box .price{
-    font-family:'Fraunces',serif;
-    font-size:3rem;
-    color:var(--copper);
+    font-family:'Fraunces',Georgia,serif;
+    font-size:3.2rem;
+    line-height:1;
+    color:var(--copper-light);
+    font-variation-settings:'opsz' 120,'SOFT' 30,'WONK' 1;
   }
   .ticket-box ul{
     list-style:none;
-    margin:1rem 0 1.5rem;
+    margin:1.1rem 0 1.6rem;
     font-size:.95rem;
     opacity:.9;
   }
   .ticket-box ul li{margin-bottom:.35rem;}
-  .btn{
-    display:inline-block;
-    background:var(--copper);
-    color:#fff;
-    padding:.85rem 2rem;
-    border-radius:4px;
-    text-decoration:none;
-    font-weight:600;
-    letter-spacing:.02em;
-    transition:background .15s ease;
-  }
-  .btn:hover{background:var(--copper-dark);}
+
+  /* ============ STAYOKAY ============ */
 
   .stayokay{
     background:var(--moss);
     color:#fff;
     text-align:center;
-    padding:3rem 1.5rem;
+    padding:3.5rem 1.5rem;
   }
-  .stayokay h3{font-size:1.5rem;margin-bottom:.6rem;}
-  .stayokay p{max-width:34rem;margin:0 auto 1.3rem;opacity:.92;}
-  .stayokay .btn{background:var(--stone-100);color:var(--stone-950);}
-  .stayokay .btn:hover{background:#fff;}
+  .stayokay h3{font-size:1.6rem;margin-bottom:.7rem;}
+  .stayokay p{max-width:34rem;margin:0 auto 1.5rem;opacity:.93;}
+  .stayokay .btn-primary{background:var(--stone-100);color:var(--stone-900);}
+  .stayokay .btn-primary:hover{background:#fff;}
 
   footer{
     text-align:center;
@@ -169,17 +288,40 @@
 </head>
 <body>
 
-<header>
-  <div class="eyebrow">Stayokay Heemskerk × Zeglis Brouwerij</div>
-  <h1>Bier op 't Slot Festival</h1>
-  <p class="sub">Proef biertjes van 10 verschillende brouwerijen in het middeleeuwse Slot Assumburg.</p>
-</header>
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <picture class="hero-media">
+    <!-- Breed scherm: liggende foto van het hele slot -->
+    <source media="(min-width:700px)" type="image/avif" srcset="hero-wide.avif">
+    <source media="(min-width:700px)" type="image/webp" srcset="hero-wide.webp">
+    <source media="(min-width:700px)" srcset="hero-wide.jpg">
+    <!-- Smal scherm: staande foto van de toren aan de slotgracht -->
+    <source type="image/avif" srcset="hero-tall.avif">
+    <source type="image/webp" srcset="hero-tall.webp">
+    <img class="hero-photo" src="hero-tall.jpg" fetchpriority="high"
+         alt="Slot Assumburg in Heemskerk, gezien door de bladeren met de zon achter de toren.">
+  </picture>
+  <div class="hero-scrim"></div>
 
-<div class="hero-img">
-  <span>Foto: Slot Assumburg, Heemskerk (Wikimedia Commons)</span>
-</div>
+  <div class="hero-content">
+    <p class="eyebrow fade-up d1">Stayokay Heemskerk &times; Zeglis Brouwerij</p>
+    <h1 class="fade-up d2">Bier op 't Slot Festival</h1>
+    <p class="tagline fade-up d3">Proef het verleden, beleef het bier.</p>
+    <p class="meta fade-up d4">
+      Zondag 7 maart 2027<span class="dot">&bull;</span>14:00&ndash;22:00 uur<span class="dot">&bull;</span>Slot Assumburg, Heemskerk
+    </p>
+    <div class="cta-row fade-up d5">
+      <a class="btn btn-primary" href="#tickets">Koop tickets</a>
+      <a class="btn btn-ghost" href="#info">Ontdek het bier</a>
+    </div>
+  </div>
 
-<div class="details">
+  <div class="scroll-cue fade-up d5"></div>
+  <span class="photo-credit">Foto: Taco van der Werf</span>
+</section>
+
+<!-- ============ INFO ============ -->
+<div class="details" id="info">
   <h2>Praktische info</h2>
   <div class="info-grid">
     <div class="info-card">
@@ -188,7 +330,7 @@
     </div>
     <div class="info-card">
       <div class="label">Tijd</div>
-      <div class="value">14:00 – 22:00 uur</div>
+      <div class="value">14:00 &ndash; 22:00 uur</div>
     </div>
     <div class="info-card">
       <div class="label">Locatie</div>
@@ -200,25 +342,27 @@
     </div>
   </div>
 
-  <div class="ticket-box">
-    <div class="price">€10</div>
+  <div class="ticket-box" id="tickets">
+    <div class="price">&euro;10</div>
     <ul>
       <li>Entree</li>
-      <li>1× proefglas (15 cl)</li>
-      <li>2 muntjes à €3,- p/st.</li>
+      <li>1&times; proefglas (15 cl)</li>
+      <li>2 muntjes &agrave; &euro;3,- p/st.</li>
     </ul>
-    <a class="btn" href="mailto:info@bierophetslot.nl">Kaarten via info@bierophetslot.nl</a>
+    <a class="btn btn-primary" href="mailto:info@bierophetslot.nl">Kaarten via info@bierophetslot.nl</a>
   </div>
 </div>
 
+<!-- ============ STAYOKAY ============ -->
 <div class="stayokay">
   <h3>Overnachten bij Stayokay Heemskerk?</h3>
   <p>Reserveer nu een plekje en krijg 25% korting op je overnachting rond het festivalweekend.</p>
-  <a class="btn" href="#">Reserveer je overnachting</a>
+  <a class="btn btn-primary" href="#">Reserveer je overnachting</a>
 </div>
 
 <footer>
-  bierophetslot.nl &nbsp;·&nbsp; <a href="mailto:info@bierophetslot.nl">info@bierophetslot.nl</a>
+  bierophetslot.nl &nbsp;&middot;&nbsp; <a href="mailto:info@bierophetslot.nl">info@bierophetslot.nl</a><br>
+  <span style="font-size:.78rem;opacity:.8;">Fotografie: Taco van der Werf</span>
 </footer>
 
 </body>
