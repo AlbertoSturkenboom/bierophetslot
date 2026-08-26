@@ -262,12 +262,15 @@
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:1.1rem;
-    align-items:start;
   }
   @media(max-width:640px){.tickets{grid-template-columns:1fr;gap:1.6rem;}}
 
+  /* Kolom, zodat beide blokken even hoog worden en de kleine
+     lettertjes onderaan op dezelfde lijn uitkomen. */
   .tier{
     position:relative;
+    display:flex;
+    flex-direction:column;
     border-radius:var(--radius);
     box-shadow:var(--shadow);
     padding:1.9rem 1.6rem 1.6rem;
@@ -277,7 +280,9 @@
     color:var(--stone-100);
     border:2px solid var(--copper);
   }
-  .tier-standard{background:#fff;}
+  /* Onzichtbare rand van dezelfde dikte als bij het uitgelichte blok,
+     zodat de inhoud van beide kaarten op dezelfde hoogte begint. */
+  .tier-standard{background:#fff;border:2px solid transparent;}
 
   /* Steekt boven de kaartrand uit; vandaar de negatieve top. */
   .tier .badge{
@@ -336,7 +341,8 @@
   .fineprint{
     font-size:.76rem;
     line-height:1.45;
-    margin-top:1rem;
+    margin-top:auto;
+    padding-top:1rem;
     opacity:.72;
   }
 
