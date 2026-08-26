@@ -169,6 +169,13 @@
   }
   .btn-ghost:hover{background:rgba(241,236,226,.18);border-color:#fff;transform:translateY(-2px);}
 
+  /* Op smalle schermen staan de twee knoppen toch al onder elkaar;
+     even breed maken scheelt twee verschillende maten onder elkaar. */
+  @media(max-width:520px){
+    .cta-row{flex-direction:column;align-items:center;}
+    .cta-row .btn{width:100%;max-width:20rem;}
+  }
+
   .scroll-cue{
     position:relative;
     z-index:2;
