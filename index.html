@@ -276,7 +276,7 @@
   }
   .ticket-box ul{
     list-style:none;
-    margin:1.1rem 0 1.1rem;
+    margin:1.1rem 0 1rem;
     font-size:.95rem;
     opacity:.9;
   }
@@ -284,8 +284,9 @@
   .ticket-box .note{
     font-size:.82rem;
     opacity:.7;
-    margin-bottom:1.5rem;
+    margin-bottom:.6rem;
   }
+  .ticket-box .note:last-of-type{margin-bottom:1.5rem;}
 
   /* ============ STAYOKAY ============ */
 
@@ -299,6 +300,143 @@
   .stayokay p{max-width:34rem;margin:0 auto 1.5rem;opacity:.93;}
   .stayokay .btn-primary{background:var(--stone-100);color:var(--stone-900);}
   .stayokay .btn-primary:hover{background:#fff;}
+
+  /* ============ GALLERY ============ */
+
+  .gallery{
+    max-width:920px;
+    margin:0 auto;
+    padding:4rem 1.5rem 4.5rem;
+  }
+  .gallery h2{
+    font-size:1.9rem;
+    margin-bottom:1.6rem;
+    color:var(--copper-dark);
+    font-variation-settings:'opsz' 60,'SOFT' 30,'WONK' 1;
+  }
+  .gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:1rem;
+  }
+  @media(min-width:700px){.gallery-grid{grid-template-columns:repeat(4,1fr);}}
+  .gallery-grid figure{margin:0;}
+  .gallery-grid .shot{
+    display:block;
+    width:100%;
+    padding:0;
+    border:0;
+    background:none;
+    cursor:zoom-in;
+    border-radius:var(--radius-sm);
+    /* de knop is puur een trigger; de foto eronder draagt de vorm */
+    transition:transform .18s ease;
+  }
+  .gallery-grid .shot:hover{transform:translateY(-3px);}
+  .gallery-grid .shot:focus-visible{outline:3px solid var(--copper);outline-offset:3px;}
+  .gallery-grid img{
+    width:100%;
+    aspect-ratio:4/3;
+    object-fit:cover;
+    border-radius:var(--radius-sm);
+    box-shadow:var(--shadow);
+    display:block;
+  }
+  .gallery-grid figcaption{
+    margin-top:.5rem;
+    font-size:.8rem;
+    color:var(--stone-800);
+    opacity:.75;
+    text-align:center;
+  }
+
+  /* ============ LIGHTBOX ============ */
+
+  .lightbox{
+    position:fixed;
+    inset:0;
+    z-index:50;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:.9rem;
+    padding:clamp(1rem,4vw,3rem);
+    background:rgba(20,18,15,.95);
+    animation:lbFade .2s ease;
+  }
+  .lightbox[hidden]{display:none;}
+
+  @keyframes lbFade{from{opacity:0;}to{opacity:1;}}
+
+  .lightbox figure{
+    margin:0;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:.85rem;
+    max-width:100%;
+  }
+  .lightbox img{
+    max-width:100%;
+    max-height:74vh;
+    object-fit:contain;
+    border-radius:var(--radius-sm);
+    box-shadow:0 18px 60px rgba(0,0,0,.5);
+  }
+  .lightbox figcaption{
+    font-family:'Fraunces',Georgia,serif;
+    font-size:1.15rem;
+    color:var(--stone-100);
+    font-variation-settings:'opsz' 40,'SOFT' 30,'WONK' 1;
+    text-align:center;
+  }
+  .lb-counter{
+    font-size:.8rem;
+    letter-spacing:.1em;
+    color:rgba(241,236,226,.55);
+    font-variant-numeric:tabular-nums;
+  }
+
+  .lb-controls{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:1.25rem;
+  }
+
+  .lb-btn{
+    display:grid;
+    place-items:center;
+    flex:none;
+    width:3rem;
+    height:3rem;
+    border:1.5px solid rgba(241,236,226,.3);
+    border-radius:50%;
+    background:rgba(20,18,15,.55);
+    color:var(--stone-100);
+    cursor:pointer;
+    transition:background .18s ease,border-color .18s ease;
+  }
+  .lb-btn:hover{background:var(--copper);border-color:var(--copper);}
+  .lb-btn:focus-visible{outline:3px solid var(--copper-light);outline-offset:3px;}
+  .lb-btn svg{width:1.4rem;height:1.4rem;fill:none;stroke:currentColor;stroke-width:2;
+    stroke-linecap:round;stroke-linejoin:round;}
+
+  .lb-close{position:absolute;top:clamp(.75rem,2vw,1.5rem);right:clamp(.75rem,2vw,1.5rem);}
+  .lb-prev,.lb-next{position:absolute;top:50%;transform:translateY(-50%);}
+  .lb-prev{left:clamp(.5rem,2vw,2rem);}
+  .lb-next{right:clamp(.5rem,2vw,2rem);}
+
+  /* Smal scherm: knoppen naast de teller onder de foto, niet eroverheen. */
+  @media (max-width:640px){
+    .lb-prev,.lb-next{position:static;transform:none;}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    .lightbox{animation:none;}
+    .gallery-grid .shot:hover{transform:none;}
+  }
 
   footer{
     text-align:center;
@@ -368,13 +506,13 @@
   </div>
 
   <div class="ticket-box" id="tickets">
-    <div class="tier-label">Vroegboekprijs t/m 31 december 2026</div>
+    <div class="tier-label">Voor de eerste 150 boekingen</div>
     <div class="price">&euro;10</div>
     <ul>
-      <li>Entree + proefglas (mag je houden)</li>
-      <li>2 muntjes &agrave; &euro;3,- p/st.</li>
+      <li>Entree + proefglaasje (mag je houden) + 2 muntjes &agrave; &euro;3,-</li>
     </ul>
-    <p class="note">Vanaf 1 januari 2027: reguliere entree &euro;12,50 (zelfde inhoud).</p>
+    <p class="note">Plus 25% korting op je overnachting in het kasteel &mdash; alleen geldig op 7 maart 2027, o.v.b.</p>
+    <p class="note">Erna: reguliere entree &euro;12,50, met hetzelfde proefglaasje + 2 muntjes.</p>
     <a class="btn btn-primary" href="mailto:info@bierophetslot.nl">Kaarten via info@bierophetslot.nl</a>
   </div>
 </div>
@@ -382,14 +520,187 @@
 <!-- ============ STAYOKAY ============ -->
 <div class="stayokay">
   <h3>Overnachten bij Stayokay Heemskerk?</h3>
-  <p>Boek je ticket v&oacute;&oacute;r 1 januari 2027 en krijg 25% korting op je overnachting in het kasteel op 7 maart 2027.</p>
+  <p>Behoor je tot de eerste 150 boekingen? Dan krijg je 25% korting op je overnachting in het kasteel op 7 maart 2027 (o.v.b.).</p>
   <a class="btn btn-primary" href="https://www.stayokay.com/nl/hostel/heemskerk" target="_blank" rel="noopener">Reserveer je overnachting</a>
+</div>
+
+<!-- ============ GALLERY ============ -->
+<div class="gallery" id="sfeer">
+  <h2>Sfeer in het kasteel</h2>
+  <div class="gallery-grid">
+    <figure>
+      <button class="shot" type="button"
+              data-groot-avif="sfeer-geverszaal-groot.avif"
+              data-groot-jpg="sfeer-geverszaal-groot.jpg"
+              data-titel="Geverszaal" aria-label="Bekijk Geverszaal groter">
+        <picture>
+          <source type="image/avif" srcset="sfeer-geverszaal.avif">
+          <img src="sfeer-geverszaal.jpg" loading="lazy"
+               alt="Geverszaal met paarse gordijnen en middeleeuwse muurschilderingen">
+        </picture>
+      </button>
+      <figcaption>Geverszaal</figcaption>
+    </figure>
+    <figure>
+      <button class="shot" type="button"
+              data-groot-avif="sfeer-assendelftzaal-groot.avif"
+              data-groot-jpg="sfeer-assendelftzaal-groot.jpg"
+              data-titel="Assendelftzaal" aria-label="Bekijk Assendelftzaal groter">
+        <picture>
+          <source type="image/avif" srcset="sfeer-assendelftzaal.avif">
+          <img src="sfeer-assendelftzaal.jpg" loading="lazy"
+               alt="Assendelftzaal met houten balkenplafond en felroze gordijnen">
+        </picture>
+      </button>
+      <figcaption>Assendelftzaal</figcaption>
+    </figure>
+    <figure>
+      <button class="shot" type="button"
+              data-groot-avif="sfeer-deutzzaal-groot.avif"
+              data-groot-jpg="sfeer-deutzzaal-groot.jpg"
+              data-titel="Deutzzaal" aria-label="Bekijk Deutzzaal groter">
+        <picture>
+          <source type="image/avif" srcset="sfeer-deutzzaal.avif">
+          <img src="sfeer-deutzzaal.jpg" loading="lazy"
+               alt="Deutzzaal met beschilderd plafond en lounge-hoek">
+        </picture>
+      </button>
+      <figcaption>Deutzzaal</figcaption>
+    </figure>
+    <figure>
+      <button class="shot" type="button"
+              data-groot-avif="sfeer-bar-groot.avif"
+              data-groot-jpg="sfeer-bar-groot.jpg"
+              data-titel="De bar" aria-label="Bekijk De bar groter">
+        <picture>
+          <source type="image/avif" srcset="sfeer-bar.avif">
+          <img src="sfeer-bar.jpg" loading="lazy"
+               alt="De bar van Stayokay Heemskerk met tapkranen en barkrukken">
+        </picture>
+      </button>
+      <figcaption>De bar</figcaption>
+    </figure>
+  </div>
+</div>
+
+<!-- ============ LIGHTBOX ============ -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Sfeerfoto's" hidden>
+  <button class="lb-btn lb-close" type="button" id="lbClose" aria-label="Sluiten">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+  </button>
+  <figure id="lbFigure"></figure>
+
+  <div class="lb-controls">
+    <button class="lb-btn lb-prev" type="button" id="lbPrev" aria-label="Vorige foto">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+    </button>
+    <p class="lb-counter" id="lbCounter"></p>
+    <button class="lb-btn lb-next" type="button" id="lbNext" aria-label="Volgende foto">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+    </button>
+  </div>
 </div>
 
 <footer>
   bierophetslot.nl &nbsp;&middot;&nbsp; <a href="mailto:info@bierophetslot.nl">info@bierophetslot.nl</a><br>
   <span style="font-size:.78rem;opacity:.8;">Fotografie: Taco van der Werf</span>
 </footer>
+
+<script>
+(function(){
+  const lightbox = document.getElementById('lightbox');
+  const figure   = document.getElementById('lbFigure');
+  const counter  = document.getElementById('lbCounter');
+  const btnPrev  = document.getElementById('lbPrev');
+  const btnNext  = document.getElementById('lbNext');
+  const btnClose = document.getElementById('lbClose');
+  const shots    = Array.from(document.querySelectorAll('.gallery-grid .shot'));
+
+  if (!lightbox || shots.length === 0) return;
+
+  const knoppen = [btnClose, btnPrev, btnNext];
+  let huidige = 0;
+  let opener = null;
+
+  function toon(index){
+    huidige = (index + shots.length) % shots.length;
+    const shot = shots[huidige];
+    const alt = shot.querySelector('img').alt;
+
+    // Het <picture>-element wordt opnieuw opgebouwd: een bestaande <source>
+    // een nieuwe srcset geven wordt niet in elke browser opnieuw geëvalueerd.
+    figure.replaceChildren();
+    const picture = document.createElement('picture');
+    const source = document.createElement('source');
+    source.type = 'image/avif';
+    source.srcset = shot.dataset.grootAvif;
+    const img = document.createElement('img');
+    img.src = shot.dataset.grootJpg;
+    img.alt = alt;
+    picture.append(source, img);
+
+    const caption = document.createElement('figcaption');
+    caption.textContent = shot.dataset.titel;
+
+    figure.append(picture, caption);
+    counter.textContent = (huidige + 1) + ' / ' + shots.length;
+  }
+
+  function open(index){
+    opener = shots[index];
+    toon(index);
+    lightbox.hidden = false;
+    document.body.style.overflow = 'hidden';
+    btnClose.focus();
+  }
+
+  function sluit(){
+    lightbox.hidden = true;
+    figure.replaceChildren();
+    document.body.style.overflow = '';
+    if (opener) opener.focus();
+  }
+
+  shots.forEach((shot, i) => shot.addEventListener('click', () => open(i)));
+  btnPrev.addEventListener('click', () => toon(huidige - 1));
+  btnNext.addEventListener('click', () => toon(huidige + 1));
+  btnClose.addEventListener('click', sluit);
+
+  // Klik naast de foto sluit; klik op de foto zelf niet. De muisknop moet
+  // ook ingedrukt zijn op de achtergrond, anders sluit de klik waarmee de
+  // lightbox net geopend werd 'm meteen weer, en sluit slepen vanaf de foto.
+  let drukTarget = null;
+  lightbox.addEventListener('pointerdown', e => { drukTarget = e.target; });
+  lightbox.addEventListener('click', e => {
+    if (e.target === lightbox && drukTarget === lightbox) sluit();
+    drukTarget = null;
+  });
+
+  document.addEventListener('keydown', e => {
+    if (lightbox.hidden) return;
+    if (e.key === 'Escape')     { sluit(); }
+    else if (e.key === 'ArrowLeft')  { toon(huidige - 1); }
+    else if (e.key === 'ArrowRight') { toon(huidige + 1); }
+    else if (e.key === 'Tab') {
+      // Houd de focus binnen de lightbox zolang die open is.
+      e.preventDefault();
+      const richting = e.shiftKey ? -1 : 1;
+      const nu = knoppen.indexOf(document.activeElement);
+      knoppen[(nu + richting + knoppen.length) % knoppen.length].focus();
+    }
+  });
+
+  // Vegen op mobiel; het grootste deel van het publiek komt via de telefoon.
+  let startX = null;
+  lightbox.addEventListener('touchstart', e => { startX = e.changedTouches[0].clientX; }, {passive:true});
+  lightbox.addEventListener('touchend', e => {
+    if (startX === null) return;
+    const verschil = e.changedTouches[0].clientX - startX;
+    if (Math.abs(verschil) > 50) toon(huidige + (verschil < 0 ? 1 : -1));
+    startX = null;
+  }, {passive:true});
+})();
+</script>
 
 </body>
 </html>
