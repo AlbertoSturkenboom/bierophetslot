@@ -251,42 +251,95 @@
   }
   .info-card .value{font-size:1.05rem;font-weight:600;}
 
-  .ticket-box{
+  .tickets-head{
+    font-size:1.5rem;
+    margin:.5rem 0 1.4rem;
+    color:var(--copper-dark);
+    font-variation-settings:'opsz' 60,'SOFT' 30,'WONK' 1;
+  }
+  .tickets{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:1.1rem;
+    align-items:start;
+  }
+  @media(max-width:640px){.tickets{grid-template-columns:1fr;gap:1.6rem;}}
+
+  .tier{
+    position:relative;
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    padding:1.9rem 1.6rem 1.6rem;
+  }
+  .tier-featured{
     background:var(--stone-800);
     color:var(--stone-100);
-    border-radius:var(--radius);
-    padding:2.2rem;
-    text-align:center;
-    box-shadow:var(--shadow);
+    border:2px solid var(--copper);
   }
-  .ticket-box .tier-label{
-    font-size:.72rem;
-    text-transform:uppercase;
-    letter-spacing:.09em;
+  .tier-standard{background:#fff;}
+
+  /* Steekt boven de kaartrand uit; vandaar de negatieve top. */
+  .tier .badge{
+    position:absolute;
+    top:-.72rem;
+    left:1.5rem;
+    background:var(--copper);
+    color:#fff;
+    font-size:.68rem;
     font-weight:600;
-    color:var(--copper-light);
-    margin-bottom:.5rem;
+    letter-spacing:.09em;
+    text-transform:uppercase;
+    padding:.32rem .7rem;
+    border-radius:var(--radius-sm);
   }
-  .ticket-box .price{
+
+  .tier-label{
+    font-size:.73rem;
+    text-transform:uppercase;
+    letter-spacing:.1em;
+    font-weight:600;
+    margin-bottom:.45rem;
+  }
+  .tier-featured .tier-label{color:var(--copper-light);}
+  .tier-standard .tier-label{color:var(--moss);}
+
+  .tier .price{
     font-family:'Fraunces',Georgia,serif;
-    font-size:3.2rem;
+    font-size:2.9rem;
     line-height:1;
-    color:var(--copper-light);
     font-variation-settings:'opsz' 120,'SOFT' 30,'WONK' 1;
   }
-  .ticket-box ul{
+  .tier-featured .price{color:var(--copper-light);}
+  .tier-standard .price{color:var(--copper-dark);}
+
+  /* De plustekens maken zichtbaar dat alles bij de prijs inbegrepen is. */
+  .incl{
     list-style:none;
-    margin:1.1rem 0 1rem;
-    font-size:.95rem;
-    opacity:.9;
+    margin:1.15rem 0 0;
+    font-size:.93rem;
   }
-  .ticket-box ul li{margin-bottom:.35rem;}
-  .ticket-box .note{
-    font-size:.82rem;
-    opacity:.7;
-    margin-bottom:.6rem;
+  .incl li{
+    display:flex;
+    gap:.6rem;
+    margin-bottom:.5rem;
+    line-height:1.4;
   }
-  .ticket-box .note:last-of-type{margin-bottom:1.5rem;}
+  .incl .plus{
+    flex:none;
+    font-weight:700;
+    line-height:1.35;
+  }
+  .tier-featured .incl .plus{color:var(--copper-light);}
+  .tier-standard .incl .plus{color:var(--copper);}
+
+  .fineprint{
+    font-size:.76rem;
+    line-height:1.45;
+    margin-top:1rem;
+    opacity:.72;
+  }
+
+  .ticket-cta{text-align:center;margin-top:2rem;}
 
   /* ============ STAYOKAY ============ */
 
@@ -505,15 +558,37 @@
     </div>
   </div>
 
-  <div class="ticket-box" id="tickets">
-    <div class="tier-label">Voor de eerste 150 boekingen</div>
-    <div class="price">&euro;10</div>
-    <ul>
-      <li>Entree + proefglaasje (mag je houden) + 2 muntjes &agrave; &euro;3,-</li>
-    </ul>
-    <p class="note">Plus 25% korting op je overnachting in het kasteel &mdash; alleen geldig op 7 maart 2027, o.v.b.</p>
-    <p class="note">Erna: reguliere entree &euro;12,50, met hetzelfde proefglaasje + 2 muntjes.</p>
-    <a class="btn btn-primary" href="mailto:info@bierophetslot.nl">Kaarten via info@bierophetslot.nl</a>
+  <h3 class="tickets-head" id="tickets">Tickets</h3>
+  <div class="tickets">
+
+    <div class="tier tier-featured">
+      <span class="badge">Eerste 150 boekingen</span>
+      <div class="tier-label">Vroegboekprijs</div>
+      <div class="price">&euro;10</div>
+      <ul class="incl">
+        <li><span class="plus">+</span><span>Entree</span></li>
+        <li><span class="plus">+</span><span>Proefglaasje van 15 cl &mdash; mag je houden</span></li>
+        <li><span class="plus">+</span><span>2 muntjes, ter waarde van &euro;3 per stuk</span></li>
+        <li><span class="plus">+</span><span>25% korting op een overnachting in het kasteel</span></li>
+      </ul>
+      <p class="fineprint">De korting geldt alleen voor de nacht van 7 maart 2027 en op basis van beschikbaarheid.</p>
+    </div>
+
+    <div class="tier tier-standard">
+      <div class="tier-label">Daarna</div>
+      <div class="price">&euro;12,50</div>
+      <ul class="incl">
+        <li><span class="plus">+</span><span>Entree</span></li>
+        <li><span class="plus">+</span><span>Proefglaasje van 15 cl &mdash; mag je houden</span></li>
+        <li><span class="plus">+</span><span>2 muntjes, ter waarde van &euro;3 per stuk</span></li>
+      </ul>
+      <p class="fineprint">Deze prijs geldt zodra de eerste 150 boekingen vergeven zijn.</p>
+    </div>
+
+  </div>
+
+  <div class="ticket-cta">
+    <a class="btn btn-primary" href="mailto:info@bierophetslot.nl">Boek via info@bierophetslot.nl</a>
   </div>
 </div>
 
