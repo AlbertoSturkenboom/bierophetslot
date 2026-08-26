@@ -23,6 +23,7 @@
     --radius:10px;
     --radius-sm:4px;
     --shadow:0 4px 20px rgba(0,0,0,.08);
+    --line:#e4dccb;
   }
 
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
@@ -354,53 +355,61 @@
   .stayokay .btn-primary{background:var(--stone-100);color:var(--stone-900);}
   .stayokay .btn-primary:hover{background:#fff;}
 
-  /* ============ GALLERY ============ */
+  /* ============ ZALEN ============ */
 
-  .gallery{
-    max-width:920px;
-    margin:0 auto;
-    padding:4rem 1.5rem 4.5rem;
+  .rooms{
+    background:#fff;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    padding:4rem 1.5rem;
   }
-  .gallery h2{
+  .rooms-inner{max-width:960px;margin:0 auto;}
+  .rooms h2{
     font-size:1.9rem;
-    margin-bottom:1.6rem;
     color:var(--copper-dark);
     font-variation-settings:'opsz' 60,'SOFT' 30,'WONK' 1;
+    margin-bottom:.5rem;
   }
-  .gallery-grid{
+  .rooms .lead{
+    max-width:38rem;
+    margin-bottom:2rem;
+    opacity:.8;
+  }
+  .rooms-grid{
     display:grid;
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
     gap:1rem;
   }
-  @media(min-width:700px){.gallery-grid{grid-template-columns:repeat(4,1fr);}}
-  .gallery-grid figure{margin:0;}
-  .gallery-grid .shot{
+  .shot{
     display:block;
-    width:100%;
-    padding:0;
-    border:0;
-    background:none;
-    cursor:zoom-in;
+    text-decoration:none;
+    color:inherit;
     border-radius:var(--radius-sm);
-    /* de knop is puur een trigger; de foto eronder draagt de vorm */
-    transition:transform .18s ease;
+    overflow:hidden;
+    background:var(--stone-100);
+    cursor:zoom-in;
   }
-  .gallery-grid .shot:hover{transform:translateY(-3px);}
-  .gallery-grid .shot:focus-visible{outline:3px solid var(--copper);outline-offset:3px;}
-  .gallery-grid img{
+  .shot figure{margin:0;}
+  .shot img{
+    display:block;
     width:100%;
     aspect-ratio:4/3;
     object-fit:cover;
-    border-radius:var(--radius-sm);
-    box-shadow:var(--shadow);
-    display:block;
+    transition:transform .35s ease;
   }
-  .gallery-grid figcaption{
-    margin-top:.5rem;
+  .shot:hover img,.shot:focus-visible img{transform:scale(1.04);}
+  .shot:focus-visible{outline:3px solid var(--copper);outline-offset:2px;}
+  .shot figcaption{
+    padding:.7rem .85rem .85rem;
+    font-size:.9rem;
+    font-weight:600;
+  }
+  .shot figcaption span{
+    display:block;
+    font-weight:400;
     font-size:.8rem;
-    color:var(--stone-800);
-    opacity:.75;
-    text-align:center;
+    opacity:.65;
+    margin-top:.15rem;
   }
 
   /* ============ LIGHTBOX ============ */
@@ -488,7 +497,7 @@
 
   @media (prefers-reduced-motion:reduce){
     .lightbox{animation:none;}
-    .gallery-grid .shot:hover{transform:none;}
+    .shot:hover img,.shot:focus-visible img{transform:none;}
   }
 
   footer{
@@ -592,70 +601,71 @@
   </div>
 </div>
 
+<!-- ============ ZALEN ============ -->
+<section class="rooms" id="zalen">
+  <div class="rooms-inner">
+    <h2>Binnen in het slot</h2>
+    <p class="lead">Geen tent op een veld, maar de historische zalen van Slot Assumburg &mdash; met beschilderde plafonds, open haarden en muurschilderingen uit de vorige eeuw.</p>
+
+    <div class="rooms-grid">
+
+      <a class="shot" href="sfeer-geverszaal-groot.jpg"
+         data-groot-avif="sfeer-geverszaal-groot.avif" data-titel="Geverszaal">
+        <figure>
+          <picture>
+            <source type="image/avif" srcset="sfeer-geverszaal.avif">
+            <img src="sfeer-geverszaal.jpg" loading="lazy" decoding="async"
+                 alt="De Geverszaal: hoge zaal met muurschilderingen van middeleeuwse muzikanten en een grote schouw.">
+          </picture>
+          <figcaption>Geverszaal<span>Muurschilderingen en een monumentale schouw</span></figcaption>
+        </figure>
+      </a>
+
+      <a class="shot" href="sfeer-assendelftzaal-groot.jpg"
+         data-groot-avif="sfeer-assendelftzaal-groot.avif" data-titel="Assendelftzaal">
+        <figure>
+          <picture>
+            <source type="image/avif" srcset="sfeer-assendelftzaal.avif">
+            <img src="sfeer-assendelftzaal.jpg" loading="lazy" decoding="async"
+                 alt="De Assendelftzaal: een lange zaal met roodgeschilderde balken, smeedijzeren kroonluchters en dieproze gordijnen.">
+          </picture>
+          <figcaption>Assendelftzaal<span>Smeedijzeren kroonluchters onder rode balken</span></figcaption>
+        </figure>
+      </a>
+
+      <a class="shot" href="sfeer-deutzzaal-groot.jpg"
+         data-groot-avif="sfeer-deutzzaal-groot.avif" data-titel="Deutzzaal">
+        <figure>
+          <picture>
+            <source type="image/avif" srcset="sfeer-deutzzaal.avif">
+            <img src="sfeer-deutzzaal.jpg" loading="lazy" decoding="async"
+                 alt="De Deutzzaal: groen geschilderde lambrisering, een beschilderd plafond met wapenschilden en leren fauteuils op een houten vloer.">
+          </picture>
+          <figcaption>Deutzzaal<span>Beschilderd plafond met wapenschilden</span></figcaption>
+        </figure>
+      </a>
+
+      <a class="shot" href="sfeer-bar-groot.jpg"
+         data-groot-avif="sfeer-bar-groot.avif" data-titel="De bar">
+        <figure>
+          <picture>
+            <source type="image/avif" srcset="sfeer-bar.avif">
+            <img src="sfeer-bar.jpg" loading="lazy" decoding="async"
+                 alt="De bar van het slot: houten tap met barkrukken op een rood geblokte plavuizenvloer.">
+          </picture>
+          <figcaption>De bar<span>Plavuizen, barkrukken en gewelfd plafond</span></figcaption>
+        </figure>
+      </a>
+
+    </div>
+  </div>
+</section>
+
 <!-- ============ STAYOKAY ============ -->
 <div class="stayokay">
   <h3>Overnachten bij Stayokay Heemskerk?</h3>
-  <p>Behoor je tot de eerste 150 boekingen? Dan krijg je 25% korting op je overnachting in het kasteel op 7 maart 2027 (o.v.b.).</p>
+  <p>Stayokay Heemskerk zit in Slot Assumburg zelf. Behoor je tot de eerste 150 boekingen? Dan krijg je 25% korting op een overnachting &mdash; alleen voor de nacht van 7 maart 2027 en op basis van beschikbaarheid.</p>
   <a class="btn btn-primary" href="https://www.stayokay.com/nl/hostel/heemskerk" target="_blank" rel="noopener">Reserveer je overnachting</a>
-</div>
-
-<!-- ============ GALLERY ============ -->
-<div class="gallery" id="sfeer">
-  <h2>Sfeer in het kasteel</h2>
-  <div class="gallery-grid">
-    <figure>
-      <button class="shot" type="button"
-              data-groot-avif="sfeer-geverszaal-groot.avif"
-              data-groot-jpg="sfeer-geverszaal-groot.jpg"
-              data-titel="Geverszaal" aria-label="Bekijk Geverszaal groter">
-        <picture>
-          <source type="image/avif" srcset="sfeer-geverszaal.avif">
-          <img src="sfeer-geverszaal.jpg" loading="lazy"
-               alt="Geverszaal met paarse gordijnen en middeleeuwse muurschilderingen">
-        </picture>
-      </button>
-      <figcaption>Geverszaal</figcaption>
-    </figure>
-    <figure>
-      <button class="shot" type="button"
-              data-groot-avif="sfeer-assendelftzaal-groot.avif"
-              data-groot-jpg="sfeer-assendelftzaal-groot.jpg"
-              data-titel="Assendelftzaal" aria-label="Bekijk Assendelftzaal groter">
-        <picture>
-          <source type="image/avif" srcset="sfeer-assendelftzaal.avif">
-          <img src="sfeer-assendelftzaal.jpg" loading="lazy"
-               alt="Assendelftzaal met houten balkenplafond en felroze gordijnen">
-        </picture>
-      </button>
-      <figcaption>Assendelftzaal</figcaption>
-    </figure>
-    <figure>
-      <button class="shot" type="button"
-              data-groot-avif="sfeer-deutzzaal-groot.avif"
-              data-groot-jpg="sfeer-deutzzaal-groot.jpg"
-              data-titel="Deutzzaal" aria-label="Bekijk Deutzzaal groter">
-        <picture>
-          <source type="image/avif" srcset="sfeer-deutzzaal.avif">
-          <img src="sfeer-deutzzaal.jpg" loading="lazy"
-               alt="Deutzzaal met beschilderd plafond en lounge-hoek">
-        </picture>
-      </button>
-      <figcaption>Deutzzaal</figcaption>
-    </figure>
-    <figure>
-      <button class="shot" type="button"
-              data-groot-avif="sfeer-bar-groot.avif"
-              data-groot-jpg="sfeer-bar-groot.jpg"
-              data-titel="De bar" aria-label="Bekijk De bar groter">
-        <picture>
-          <source type="image/avif" srcset="sfeer-bar.avif">
-          <img src="sfeer-bar.jpg" loading="lazy"
-               alt="De bar van Stayokay Heemskerk met tapkranen en barkrukken">
-        </picture>
-      </button>
-      <figcaption>De bar</figcaption>
-    </figure>
-  </div>
 </div>
 
 <!-- ============ LIGHTBOX ============ -->
@@ -689,7 +699,7 @@
   const btnPrev  = document.getElementById('lbPrev');
   const btnNext  = document.getElementById('lbNext');
   const btnClose = document.getElementById('lbClose');
-  const shots    = Array.from(document.querySelectorAll('.gallery-grid .shot'));
+  const shots    = Array.from(document.querySelectorAll('.rooms-grid .shot'));
 
   if (!lightbox || shots.length === 0) return;
 
@@ -710,7 +720,8 @@
     source.type = 'image/avif';
     source.srcset = shot.dataset.grootAvif;
     const img = document.createElement('img');
-    img.src = shot.dataset.grootJpg;
+    // De href is tegelijk de JPEG-bron en de fallback zonder JavaScript.
+    img.src = shot.getAttribute('href');
     img.alt = alt;
     picture.append(source, img);
 
@@ -736,7 +747,11 @@
     if (opener) opener.focus();
   }
 
-  shots.forEach((shot, i) => shot.addEventListener('click', () => open(i)));
+  // Zonder JavaScript volgt de browser de href en opent de foto gewoon.
+  shots.forEach((shot, i) => shot.addEventListener('click', e => {
+    e.preventDefault();
+    open(i);
+  }));
   btnPrev.addEventListener('click', () => toon(huidige - 1));
   btnNext.addEventListener('click', () => toon(huidige + 1));
   btnClose.addEventListener('click', sluit);

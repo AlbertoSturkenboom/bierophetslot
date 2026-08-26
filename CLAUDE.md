@@ -35,10 +35,14 @@ tenzij er een tool bij komt die ook WebP kan.
 
 ## Lightbox
 
-De sfeergalerij opent in een lightbox: klik op een thumbnail toont de `-groot`-versie,
+De zalensectie opent in een lightbox: klik op een thumbnail toont de `-groot`-versie,
 met vorige/volgende, pijltjestoetsen, Escape, vegen op mobiel en klik naast de foto.
 Onderin `index.html` staat daarvoor het enige stukje JavaScript van de site (vanilla,
 geen dependencies). Aandachtspunten bij wijzigen:
+
+- De thumbnails zijn `<a href="…-groot.jpg">`, geen knoppen. Zonder JavaScript opent de
+  foto daardoor alsnog; de `href` is tegelijk de JPEG-bron voor de lightbox. Blijf die
+  twee gelijk houden, en laat de `e.preventDefault()` in de klik-handler staan.
 
 - Het `<picture>`-element wordt bij elke navigatie opnieuw opgebouwd; alleen de `srcset`
   van een bestaande `<source>` aanpassen wordt niet in elke browser opnieuw geëvalueerd.
