@@ -74,6 +74,16 @@ geen dependencies). Aandachtspunten bij wijzigen:
 - Animaties respecteren `prefers-reduced-motion`.
 - Mobiel-eerst controleren; het grootste deel van het publiek komt via de telefoon.
 
+## Ouderdom van het kasteel
+
+Op de site staat bewust "een plek waar al bijna 700 jaar een kasteel staat", niet
+"ons 700 jaar oude kasteel". Volgens het rijksmonumentenregister dateert de oudste
+bouwfase van het huidige kasteel uit de 15e eeuw en kreeg het zijn vierkante vorm pas
+in 1708–1719; de plek zelf wordt al in 1335 genoemd. De formulering slaat dus op de
+locatie, niet op de muren. Stayokay zelf spreekt van een "13e-eeuws kasteel" — dat
+wordt door het register niet gedekt. Meta-description en lopende tekst moeten hetzelfde
+verhaal vertellen; pas ze samen aan.
+
 ## Rechten
 
 Foto's van Taco van der Werf, via Stayokay Heemskerk. Gebruik is toegestaan.
