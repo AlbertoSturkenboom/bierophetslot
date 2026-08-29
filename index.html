@@ -185,6 +185,21 @@
     background:linear-gradient(to bottom,transparent,rgba(241,236,226,.7));
   }
 
+  /* Linksboven over de hero, zoals Stayokay het logo op de eigen site plaatst. */
+  .site-logo{
+    position:absolute;
+    top:clamp(1.1rem,3vw,1.9rem);
+    left:clamp(1.1rem,3vw,2.2rem);
+    z-index:2;
+  }
+  .site-logo img{
+    display:block;
+    width:auto;
+    height:clamp(1.9rem,4.5vw,2.6rem);
+    /* Het rode logo valt boven op de lichte lucht; de schaduw houdt het los van de foto. */
+    filter:drop-shadow(0 2px 8px rgba(0,0,0,.35));
+  }
+
   .photo-credit{
     position:absolute;
     right:.7rem;
@@ -534,6 +549,10 @@
          alt="Slot Assumburg in Heemskerk, gezien door de bladeren met de zon achter de toren.">
   </picture>
   <div class="hero-scrim"></div>
+
+  <div class="site-logo">
+    <img src="stayokay-logo.png" alt="Stayokay" width="400" height="133">
+  </div>
 
   <div class="hero-content">
     <p class="eyebrow fade-up d1">Stayokay Heemskerk &times; Zeglis Brouwerij</p>

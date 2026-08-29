@@ -25,6 +25,9 @@ Alles staat in de root, geen build-stap, geen dependencies.
 - `hero-tall.{avif,webp,jpg}` — 1200×1800, staande foto van de toren, voor schermen <700px
 - `sfeer-{geverszaal,assendelftzaal,deutzzaal,bar}.{avif,jpg}` — thumbnails, 640px breed
 - `sfeer-{…}-groot.{avif,jpg}` — dezelfde foto's op 1800px, voor de lightbox
+- `stayokay-logo.png` — 400px breed, met transparantie; staat linksboven over de hero,
+  op dezelfde plek als in de header van stayokay.com. Bewust géén link, omdat de hero
+  verder linkvrij is gehouden.
 
 De hero gebruikt `<picture>` met art direction: brede foto op desktop, staande op mobiel.
 Per foto drie formaten, browser kiest zelf (AVIF → WebP → JPEG).
@@ -67,6 +70,9 @@ geen dependencies). Aandachtspunten bij wijzigen:
 
 Foto's van Taco van der Werf, via Stayokay Heemskerk. Gebruik is toegestaan.
 Vermelding staat in de footer en rechtsonder in de hero — laat die staan.
+
+Het Stayokay-logo is merkmateriaal van Stayokay; aangeleverd door de organisatie.
+Niet uitrekken of verkleuren, en de verhouding intact laten.
 
 ## Nog te doen
 
