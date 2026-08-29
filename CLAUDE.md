@@ -28,6 +28,8 @@ Alles staat in de root, geen build-stap, geen dependencies.
 - `stayokay-logo.png` — 400px breed, met transparantie; staat linksboven over de hero,
   op dezelfde plek als in de header van stayokay.com. Bewust géén link, omdat de hero
   verder linkvrij is gehouden.
+- `luchtfoto.{avif,jpg}` — 1600px, volle band tussen de tickets en de zalensectie;
+  laat het terrein zien voordat de pagina naar binnen gaat.
 
 De hero gebruikt `<picture>` met art direction: brede foto op desktop, staande op mobiel.
 Per foto drie formaten, browser kiest zelf (AVIF → WebP → JPEG).
@@ -35,6 +37,11 @@ Per foto drie formaten, browser kiest zelf (AVIF → WebP → JPEG).
 De sfeergalerij gebruikt alleen AVIF → JPEG (geen WebP): `sips` op dit systeem kan geen
 WebP schrijven, alleen AVIF en JPEG. Bij nieuwe sfeerfoto's dezelfde tweeslag aanhouden,
 tenzij er een tool bij komt die ook WebP kan.
+
+Let op bij `sips -s format avif`: zonder `-s formatOptions` gebruikt het de hoogste
+kwaliteit, wat bij detailrijke foto's een AVIF oplevert die groter is dan de JPEG —
+precies het omgekeerde van wat de `<source>` moet doen. Geef dus altijd een niveau mee
+(`high`, of een getal 0–100) en controleer dat de AVIF kleiner uitvalt dan de JPEG.
 
 ## Lightbox
 
@@ -74,12 +81,16 @@ Vermelding staat in de footer en rechtsonder in de hero — laat die staan.
 Het Stayokay-logo is merkmateriaal van Stayokay; aangeleverd door de organisatie.
 Niet uitrekken of verkleuren, en de verhouding intact laten.
 
+Van de luchtfoto (`luchtfoto.*`) is de maker nog niet bekend — die staat daarom
+zonder vermelding op de pagina. Navragen bij de organisatie voordat de site live gaat.
+
 ## Nog te doen
 
 - Sectie over de 10 brouwerijen (namen, logo's, links) — nu alleen een korte vermelding van Zeglis (met link) in de tekst; overige 9 volgen zodra bekend
 - Echte ticketlink; nu een `mailto:`
 - Domein registreren en koppelen aan GitHub Pages
 - Exact adres van Slot Assumburg verifiëren voor een eventuele routebeschrijving
+- Maker van de luchtfoto achterhalen en zo nodig een vermelding toevoegen
 
 ## Valkuilen
 

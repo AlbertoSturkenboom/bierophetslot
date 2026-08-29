@@ -383,6 +383,18 @@
   .stayokay .btn-primary{background:var(--stone-100);color:var(--stone-900);}
   .stayokay .btn-primary:hover{background:#fff;}
 
+  /* ============ LUCHTFOTO ============ */
+
+  /* Volle band tussen de tickets en de zalen: van het terrein naar binnen. */
+  .aerial{
+    display:block;
+    width:100%;
+    height:clamp(13rem,36vw,24rem);
+    object-fit:cover;
+    /* Het kasteel en de tuin zitten onder het midden van het beeld. */
+    object-position:center 58%;
+  }
+
   /* ============ ZALEN ============ */
 
   .rooms{
@@ -627,6 +639,13 @@
     <a class="btn btn-primary" href="mailto:info@bierophetslot.nl">Boek via info@bierophetslot.nl</a>
   </div>
 </div>
+
+<!-- ============ LUCHTFOTO ============ -->
+<picture>
+  <source type="image/avif" srcset="luchtfoto.avif">
+  <img class="aerial" src="luchtfoto.jpg" loading="lazy" decoding="async"
+       alt="Slot Assumburg van bovenaf: het omgrachte kasteel met daarnaast de formele tuin met fontein, omringd door parkbomen en weilanden.">
+</picture>
 
 <!-- ============ ZALEN ============ -->
 <section class="rooms" id="zalen">
