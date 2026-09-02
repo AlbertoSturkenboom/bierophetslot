@@ -104,7 +104,6 @@ zonder vermelding op de pagina. Navragen bij de organisatie voordat de site live
 - Sectie over de 10 brouwerijen (namen, logo's, links) — nu alleen een korte vermelding van Zeglis in de tekst; overige 9 volgen zodra bekend
 - Echte ticketlink; nu een `mailto:`
 - Tenaamstelling domein overzetten naar Stichting Stayokay, als zij dat willen
-- DMARC terug naar `p=reject` zodra de mail bewezen goed doorkomt; staat nu op `p=none`
 - E-mailpakket opzeggen vóór augustus 2027 (gaat dan van €0,99 naar €1,99 per maand)
 - Maker van de luchtfoto achterhalen en zo nodig een vermelding toevoegen
 
@@ -114,7 +113,11 @@ Het domein staat bij mijn.host; DNS-beheer daar. De zone bevat naast elkaar:
 
 - vier A- en vier AAAA-records op `@` naar GitHub Pages
 - `www` als CNAME naar `albertosturkenboom.github.io`
-- MX naar `mx1`/`mx2.mijn.host`, plus SPF, DKIM (selector `x`) en DMARC voor de mail
+- MX naar `mx1`/`mx2.mijn.host`, plus SPF, DKIM (selector `x`) en DMARC voor de mail.
+  DMARC staat op `p=reject; sp=reject`. Mail die SPF én DKIM faalt wordt dus geweigerd,
+  niet in de spambox gelegd: verstuur je ooit via een externe mailtool (Mailchimp,
+  Laposta) naar de bezoekers, voeg die dienst dan éérst toe aan SPF en DKIM.
+  Geverifieerd met mail-tester: DKIM_VALID, DKIM_VALID_AU en DKIM_VALID_EF slagen alle drie.
 - `webmail`, `mail`, `autodiscover` en `autoconfig` wijzen naar `217.180.14.67`
   (h67.mijn.host) — dat hoort zo, dat is hun webmail en de autoconfiguratie voor
   mailclients. Alleen op `@` mocht dat IP niet staan.
