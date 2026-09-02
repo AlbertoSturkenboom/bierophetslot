@@ -13,6 +13,8 @@ Doelpubliek: bezoekers uit de regio Kennemerland. Taal: Nederlands.
 - Entree: €12,50 (regulier) — inclusief 2 muntjes à €3 per stuk en een proefglaasje (mag je houden)
 - De eerste 150 boekingen betalen €10 entree (zelfde inhoud: proefglaasje + 2 muntjes)
 - Bij die eerste 150 boekingen: ook 25% korting op een overnachting in het kasteel, alleen geldig op 7 maart 2027 en onder voorbehoud van beschikbaarheid
+- Adres: Tolweg 9, 1967 NG Heemskerk (geverifieerd via stayokay.com en het
+  rijksmonumentenregister, dat het kasteel op hetzelfde adres vermeldt)
 - Contact: info@bierophetslot.nl
 - Beoogd domein: bierophetslot.nl (nog niet geregistreerd)
 - Stayokay Heemskerk: https://www.stayokay.com/nl/hostel/heemskerk
@@ -100,7 +102,6 @@ zonder vermelding op de pagina. Navragen bij de organisatie voordat de site live
 - Sectie over de 10 brouwerijen (namen, logo's, links) — nu alleen een korte vermelding van Zeglis in de tekst; overige 9 volgen zodra bekend
 - Echte ticketlink; nu een `mailto:`
 - Domein registreren en koppelen aan GitHub Pages
-- Exact adres van Slot Assumburg verifiëren voor een eventuele routebeschrijving
 - Maker van de luchtfoto achterhalen en zo nodig een vermelding toevoegen
 
 ## Valkuilen
