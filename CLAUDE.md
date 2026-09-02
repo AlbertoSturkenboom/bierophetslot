@@ -16,7 +16,9 @@ Doelpubliek: bezoekers uit de regio Kennemerland. Taal: Nederlands.
 - Adres: Tolweg 9, 1967 NG Heemskerk (geverifieerd via stayokay.com en het
   rijksmonumentenregister, dat het kasteel op hetzelfde adres vermeldt)
 - Contact: info@bierophetslot.nl
-- Beoogd domein: bierophetslot.nl (nog niet geregistreerd)
+- Domein: bierophetslot.nl, geregistreerd bij mijn.host op naam van NedBytes
+  (tenaamstelling nog over te zetten naar Stichting Stayokay als zij dat willen)
+- E-mail: info@bierophetslot.nl, mailbox in het pakket Personal bij mijn.host
 - Stayokay Heemskerk: https://www.stayokay.com/nl/hostel/heemskerk
 
 ## Structuur
@@ -101,11 +103,32 @@ zonder vermelding op de pagina. Navragen bij de organisatie voordat de site live
 
 - Sectie over de 10 brouwerijen (namen, logo's, links) — nu alleen een korte vermelding van Zeglis in de tekst; overige 9 volgen zodra bekend
 - Echte ticketlink; nu een `mailto:`
-- Domein registreren en koppelen aan GitHub Pages
+- Tenaamstelling domein overzetten naar Stichting Stayokay, als zij dat willen
+- DMARC terug naar `p=reject` zodra de mail bewezen goed doorkomt; staat nu op `p=none`
+- E-mailpakket opzeggen vóór augustus 2027 (gaat dan van €0,99 naar €1,99 per maand)
 - Maker van de luchtfoto achterhalen en zo nodig een vermelding toevoegen
+
+## DNS
+
+Het domein staat bij mijn.host; DNS-beheer daar. De zone bevat naast elkaar:
+
+- vier A- en vier AAAA-records op `@` naar GitHub Pages
+- `www` als CNAME naar `albertosturkenboom.github.io`
+- MX naar `mx1`/`mx2.mijn.host`, plus SPF, DKIM (selector `x`) en DMARC voor de mail
+- `webmail`, `mail`, `autodiscover` en `autoconfig` wijzen naar `217.180.14.67`
+  (h67.mijn.host) — dat hoort zo, dat is hun webmail en de autoconfiguratie voor
+  mailclients. Alleen op `@` mocht dat IP niet staan.
+
+Valkuil bij dit domein: mijn.host koppelde het domein aanvankelijk aan hun eigen
+webserver en zette `217.180.14.67` steeds terug op `@`, ook na verwijderen. Hun paneel
+weigert bovendien dubbele records binnen één RRset, dus je kunt het record ook niet naar
+een GitHub-adres wijzigen. Support heeft die koppeling verwijderd — maar nam daarbij ook
+de acht GitHub-records mee. Komt dat IP ooit terug op `@`, dan is de koppeling opnieuw
+gelegd en moet support er weer aan te pas komen.
 
 ## Valkuilen
 
 - `index.html` moet in de root van de repo staan, anders vindt GitHub Pages 'm niet.
+- `CNAME` bevat `bierophetslot.nl` en stuurt GitHub Pages aan; niet weghalen of hernoemen.
 - Plak HTML nooit via de browser-editor van GitHub; dat heeft eerder het bestand
   afgekapt en gaf een blanco pagina. Committen vanaf lokaal of via bestandsupload.
