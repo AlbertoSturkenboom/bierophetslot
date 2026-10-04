@@ -16,6 +16,7 @@ Doelpubliek: bezoekers uit de regio Kennemerland. Taal: Nederlands.
 - Adres: Tolweg 9, 1967 NG Heemskerk (geverifieerd via stayokay.com en het
   rijksmonumentenregister, dat het kasteel op hetzelfde adres vermeldt)
 - Contact: info@bierophetslot.nl
+- Ticketverkoop: https://shop.ikbenaanwezig.nl/tickets/event/bier-op-het-slot
 - Domein: bierophetslot.nl, geregistreerd bij mijn.host op naam van NedBytes
   (tenaamstelling nog over te zetten naar Stichting Stayokay als zij dat willen)
 - E-mail: info@bierophetslot.nl, mailbox in het pakket Personal bij mijn.host
@@ -102,7 +103,6 @@ zonder vermelding op de pagina. Navragen bij de organisatie voordat de site live
 ## Nog te doen
 
 - Sectie over de 10 brouwerijen (namen, logo's, links) — nu alleen een korte vermelding van Zeglis in de tekst; overige 9 volgen zodra bekend
-- Echte ticketlink; nu een `mailto:`
 - Tenaamstelling domein overzetten naar Stichting Stayokay, als zij dat willen
 - E-mailpakket opzeggen vóór augustus 2027 (gaat dan van €0,99 naar €1,99 per maand)
 - Maker van de luchtfoto achterhalen en zo nodig een vermelding toevoegen
