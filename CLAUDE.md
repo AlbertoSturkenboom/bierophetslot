@@ -10,8 +10,8 @@ Doelpubliek: bezoekers uit de regio Kennemerland. Taal: Nederlands.
 - Georganiseerd door Stayokay Heemskerk i.s.m. Brouwerij Zeglis (https://brouwerijzeglis.nl/)
 - 10 lokale en nationale brouwerijen; tot nu toe alleen Zeglis met naam bevestigd
   (bewust zonder hyperlink in de lopende tekst)
-- Entree: €12,50 (regulier) — inclusief 2 muntjes à €3 per stuk en een proefglaasje (mag je houden)
-- De eerste 150 boekingen betalen €10 entree (zelfde inhoud: proefglaasje + 2 muntjes)
+- Entree: €17,50 (regulier) — inclusief 2 muntjes à €3 per stuk en een proefglaasje (mag je houden)
+- De eerste 150 boekingen betalen €15 entree (zelfde inhoud: proefglaasje + 2 muntjes)
 - Bij die eerste 150 boekingen: ook 25% korting op een overnachting in het kasteel, alleen geldig op 7 maart 2027 en onder voorbehoud van beschikbaarheid
 - Adres: Tolweg 9, 1967 NG Heemskerk (geverifieerd via stayokay.com en het
   rijksmonumentenregister, dat het kasteel op hetzelfde adres vermeldt)
