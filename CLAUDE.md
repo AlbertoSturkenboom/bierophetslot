@@ -11,8 +11,9 @@ Doelpubliek: bezoekers uit de regio Kennemerland. Taal: Nederlands.
 - 10 lokale en nationale brouwerijen; tot nu toe alleen Zeglis met naam bevestigd
   (bewust zonder hyperlink in de lopende tekst)
 - Entree: €17,50 (regulier) — inclusief 2 muntjes à €3 per stuk en een proefglaasje (mag je houden)
-- De eerste 150 boekingen betalen €15 entree (zelfde inhoud: proefglaasje + 2 muntjes)
-- Bij die eerste 150 boekingen: ook 25% korting op een overnachting in het kasteel, alleen geldig op 7 maart 2027 en onder voorbehoud van beschikbaarheid
+- De eerste 100 boekingen betalen €15 entree (zelfde inhoud: proefglaasje + 2 muntjes)
+- Bij die eerste 100 boekingen: ook 25% korting op een overnachting in het kasteel, alleen geldig op 7 maart 2027 en onder voorbehoud van beschikbaarheid.
+  Aanvragen gaat per mail naar heemskerk@stayokay.com; er staat bewust geen reserveerknop meer op de site
 - Adres: Tolweg 9, 1967 NG Heemskerk (geverifieerd via stayokay.com en het
   rijksmonumentenregister, dat het kasteel op hetzelfde adres vermeldt)
 - Contact: info@bierophetslot.nl
