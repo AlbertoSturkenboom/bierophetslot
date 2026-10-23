@@ -384,6 +384,62 @@
   .stayokay .boeken{font-size:.93rem;opacity:.88;margin-bottom:0;}
   .stayokay a{color:#fff;text-underline-offset:2px;}
 
+  /* ============ BROUWERIJEN ============ */
+
+  .brouwers{
+    max-width:960px;
+    margin:0 auto;
+    padding:0 1.5rem 4.5rem;
+  }
+  .brouwers h2{
+    font-size:1.9rem;
+    color:var(--copper-dark);
+    font-variation-settings:'opsz' 60,'SOFT' 30,'WONK' 1;
+    margin-bottom:.5rem;
+  }
+  .brouwers .lead{
+    max-width:34rem;
+    margin-bottom:1.75rem;
+    opacity:.85;
+  }
+  .brouwers-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:1rem;
+  }
+  /* Hele kaart is klikbaar; de naam draagt de linkopmaak. */
+  .brouwer{
+    display:block;
+    background:#fff;
+    border-left:4px solid var(--copper);
+    border-radius:var(--radius-sm);
+    box-shadow:var(--shadow);
+    padding:1.1rem 1.3rem;
+    text-decoration:none;
+    color:inherit;
+    transition:transform .18s ease;
+  }
+  .brouwer:hover{transform:translateY(-3px);}
+  .brouwer:focus-visible{outline:3px solid var(--copper);outline-offset:3px;}
+  .brouwer .naam{
+    display:block;
+    font-weight:600;
+    font-size:1.05rem;
+    color:var(--copper-dark);
+  }
+  .brouwer:hover .naam{text-decoration:underline;}
+  .brouwer .plaats{
+    display:block;
+    font-size:.8rem;
+    color:var(--stone-800);
+    opacity:.7;
+    margin-top:.2rem;
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    .brouwer:hover{transform:none;}
+  }
+
   /* ============ LUCHTFOTO ============ */
 
   /* Volle band tussen de tickets en de zalen: van het terrein naar binnen. */
@@ -576,7 +632,7 @@
     </p>
     <div class="cta-row fade-up d5">
       <a class="btn btn-primary" href="#tickets">Koop tickets</a>
-      <a class="btn btn-ghost" href="#info">Ontdek het bier</a>
+      <a class="btn btn-ghost" href="#brouwerijen">Ontdek het bier</a>
     </div>
   </div>
 
@@ -641,6 +697,35 @@
        target="_blank" rel="noopener">Bestel tickets</a>
   </div>
 </div>
+
+<!-- ============ BROUWERIJEN ============ -->
+<section class="brouwers" id="brouwerijen">
+  <h2>De brouwerijen</h2>
+  <p class="lead">Vijf van de tien zijn bekend. De overige namen volgen &mdash; houd de site in de gaten.</p>
+
+  <div class="brouwers-grid">
+    <a class="brouwer" href="https://brouwerijzeglis.nl" target="_blank" rel="noopener">
+      <span class="naam">Brouwerij Zeglis</span>
+      <span class="plaats">Alkmaar &middot; mede-organisator</span>
+    </a>
+    <a class="brouwer" href="https://hetbrouwlokaal.nl" target="_blank" rel="noopener">
+      <span class="naam">Het Brouwlokaal</span>
+      <span class="plaats">Beverwijk</span>
+    </a>
+    <a class="brouwer" href="https://sancti.nl" target="_blank" rel="noopener">
+      <span class="naam">Brouwerij Egmond</span>
+      <span class="plaats">Sancti Adalberti &middot; Egmond aan den Hoef</span>
+    </a>
+    <a class="brouwer" href="https://moersleutel.com" target="_blank" rel="noopener">
+      <span class="naam">Moersleutel</span>
+      <span class="plaats">Alkmaar</span>
+    </a>
+    <a class="brouwer" href="https://nl.latrappetrappist.com" target="_blank" rel="noopener">
+      <span class="naam">La Trappe</span>
+      <span class="plaats">Berkel-Enschot</span>
+    </a>
+  </div>
+</section>
 
 <!-- ============ LUCHTFOTO ============ -->
 <picture>

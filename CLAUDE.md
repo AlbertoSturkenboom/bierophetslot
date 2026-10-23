@@ -8,8 +8,12 @@ Doelpubliek: bezoekers uit de regio Kennemerland. Taal: Nederlands.
 - Zondag 7 maart 2027, 14:00–22:00 uur
 - Slot Assumburg, Heemskerk
 - Georganiseerd door Stayokay Heemskerk i.s.m. Brouwerij Zeglis (https://brouwerijzeglis.nl/)
-- 10 lokale en nationale brouwerijen; tot nu toe alleen Zeglis met naam bevestigd
-  (bewust zonder hyperlink in de lopende tekst)
+- 10 lokale en nationale brouwerijen; vijf bevestigd en op de site vermeld:
+  Zeglis (Alkmaar), Het Brouwlokaal (Beverwijk), Brouwerij Egmond / Sancti Adalberti
+  (Egmond aan den Hoef), Moersleutel (Alkmaar) en La Trappe (Berkel-Enschot).
+  Vestigingsplaatsen zijn gecontroleerd op de sites van de brouwerijen zelf.
+  In de lopende tekst van "Praktische info" staat Zeglis bewust zonder hyperlink;
+  de links zitten in de sectie Brouwerijen
 - Entree: €17,50 (regulier) — inclusief 2 muntjes à €3 per stuk en een proefglaasje (mag je houden)
 - De eerste 100 boekingen betalen €15 entree (zelfde inhoud: proefglaasje + 2 muntjes)
 - Bij die eerste 100 boekingen: ook 25% korting op een overnachting in het kasteel, alleen geldig op 7 maart 2027 en onder voorbehoud van beschikbaarheid.
@@ -103,7 +107,8 @@ zonder vermelding op de pagina. Navragen bij de organisatie voordat de site live
 
 ## Nog te doen
 
-- Sectie over de 10 brouwerijen (namen, logo's, links) — nu alleen een korte vermelding van Zeglis in de tekst; overige 9 volgen zodra bekend
+- Overige vijf brouwerijen toevoegen aan de sectie Brouwerijen zodra ze bekend zijn;
+  de lead zegt nu "Vijf van de tien zijn bekend", dus dat getal mee bijwerken
 - Tenaamstelling domein overzetten naar Stichting Stayokay, als zij dat willen
 - E-mailpakket opzeggen vóór augustus 2027 (gaat dan van €0,99 naar €1,99 per maand)
 - Maker van de luchtfoto achterhalen en zo nodig een vermelding toevoegen
