@@ -107,8 +107,9 @@ zonder vermelding op de pagina. Navragen bij de organisatie voordat de site live
 
 ## Nog te doen
 
-- Overige vijf brouwerijen toevoegen aan de sectie Brouwerijen zodra ze bekend zijn;
-  de lead zegt nu "Vijf van de tien zijn bekend", dus dat getal mee bijwerken
+- Overige vijf brouwerijen toevoegen aan de sectie Brouwerijen zodra ze bekend zijn.
+  Het aantal staat op twee plekken: de lead ("Vijf van de tien zijn bekend") en de
+  infokaart Brouwerijen ("10 brouwerijen · 5 bevestigd") — werk ze samen bij
 - Tenaamstelling domein overzetten naar Stichting Stayokay, als zij dat willen
 - E-mailpakket opzeggen vóór augustus 2027 (gaat dan van €0,99 naar €1,99 per maand)
 - Maker van de luchtfoto achterhalen en zo nodig een vermelding toevoegen
