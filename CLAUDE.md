@@ -51,10 +51,14 @@ Alles staat in de root, geen build-stap, geen dependencies.
   marine en amber zodat de antialiasde randen geen donker randje houden.
 - `apple-touch-icon.png` heeft wél een achtergrond (`--stone-900`, #1c1a17): iOS vult
   transparante delen van een beginschermicoon met zwart, dus die moet dicht zijn. Aangeleverd als 1024px JPEG en teruggeschaald met `sips`. Geen `.ico`:
-  `sips` kan dat formaat niet schrijven, en de `<link rel="icon">`-tags dekken alle
-  browsers die er nog toe doen. Bewust ook géén 16×16: browsers kozen die voor het
-  16pt-tabblad en schaalden hem op retina 2× op, wat onscherp oogt. Met 32 als
-  kleinste maat wordt er altijd naar beneden geschaald.
+  `sips` kan geen ICO schrijven, dus `favicon.ico` is met de hand samengesteld in
+  pure Python: een ICO is een header met een index plus ingesloten afbeeldingen, en
+  sinds Vista mogen dat PNG's zijn. Hij bevat 16, 32 en 48.
+- `site.webmanifest` levert de 192 en 512 voor Android. `display: browser`, want dit
+  is een website en geen app die je wilt installeren.
+- De set is zo samengesteld dat de checker op favicon.io/favicon-checker groen geeft:
+  die vraagt om favicon.ico (16/32/48), PNG's van 16 en 32, een apple-touch-icon van
+  180 en een manifest met 192 en 512.
 
 De bron is een JPEG van 1024px. Een favicon van vlakke kleurvlakken hoort eigenlijk
 een SVG te zijn: die blijft op elke grootte en elke pixeldichtheid haarscherp, terwijl

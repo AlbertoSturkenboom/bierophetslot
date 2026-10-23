@@ -4,15 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bier op &rsquo;t Slot Festival — 7 maart 2027, Slot Assumburg</title>
-<!-- Bewust geen 16×16: browsers kozen die voor het 16pt-tabblad en schaalden hem
-     op retina 2× op, wat onscherp oogt. Nu is 32 de kleinste, zodat er altijd
-     genoeg pixels zijn om naar beneden te schalen in plaats van omhoog. -->
+<!-- Veel maten met opzet: een browser kiest de dichtstbijzijnde en schaalt liever
+     naar beneden dan omhoog. De .ico staat in de root voor browsers en tools die
+     daar blind naar vragen; het manifest levert de 192 en 512 voor Android. -->
+<link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png">
 <link rel="icon" type="image/png" sizes="64x64" href="favicon-64.png">
 <link rel="icon" type="image/png" sizes="128x128" href="favicon-128.png">
 <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
 
 <meta name="theme-color" content="#f1ece2">
 <meta name="color-scheme" content="light">
