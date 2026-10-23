@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bier op 't Slot Festival — 7 maart 2027, Slot Assumburg</title>
+<title>Bier op &rsquo;t Slot Festival — 7 maart 2027, Slot Assumburg</title>
+<meta name="theme-color" content="#f1ece2">
+<meta name="color-scheme" content="light">
 <meta name="description" content="Proef bieren van 10 brouwerijen op Slot Assumburg, waar al bijna 700 jaar een kasteel staat. Zondag 7 maart 2027, 14:00–22:00 uur. Entree vanaf €15.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,6 +32,9 @@
   }
 
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+
+  /* Haalt de tikvertraging van ~300ms weg op touchscreens. */
+  html{touch-action:manipulation;}
 
   html{scroll-behavior:smooth;}
 
@@ -512,6 +517,7 @@
   .lightbox{
     position:fixed;
     inset:0;
+    overscroll-behavior:contain;
     z-index:50;
     display:flex;
     flex-direction:column;
@@ -607,6 +613,8 @@
 </head>
 <body>
 
+<main>
+
 <!-- ============ HERO ============ -->
 <section class="hero">
   <picture class="hero-media">
@@ -617,6 +625,9 @@
     <!-- Smal scherm: staande foto van de toren aan de slotgracht -->
     <source type="image/avif" srcset="hero-tall.avif">
     <source type="image/webp" srcset="hero-tall.webp">
+    <!-- Bewust zonder width/height: de twee bronnen hebben een andere verhouding
+         (staand 1200×1800, liggend 2000×1333), dus één maat zou voor de andere
+         bron de verkeerde verhouding opgeven. De hero vult sowieso de viewport. -->
     <img class="hero-photo" src="hero-tall.jpg" fetchpriority="high"
          alt="Slot Assumburg in Heemskerk, gezien door de bladeren met de zon achter de toren.">
   </picture>
@@ -628,7 +639,7 @@
 
   <div class="hero-content">
     <p class="eyebrow fade-up d1">Stayokay Heemskerk &times; Zeglis Brouwerij</p>
-    <h1 class="fade-up d2">Bier op 't Slot Festival</h1>
+    <h1 class="fade-up d2">Bier op &rsquo;t Slot Festival</h1>
     <p class="tagline fade-up d3">Proef het verleden, beleef het bier.</p>
     <p class="meta fade-up d4">
       Zondag 7 maart 2027<span class="dot">&bull;</span>14:00&ndash;22:00 uur<span class="dot">&bull;</span>Slot Assumburg, Heemskerk
@@ -733,7 +744,7 @@
 <!-- ============ LUCHTFOTO ============ -->
 <picture>
   <source type="image/avif" srcset="luchtfoto.avif">
-  <img class="aerial" src="luchtfoto.jpg" loading="lazy" decoding="async"
+  <img class="aerial" src="luchtfoto.jpg" width="1600" height="1066" loading="lazy" decoding="async"
        alt="Slot Assumburg van bovenaf: het omgrachte kasteel met daarnaast de formele tuin met fontein, omringd door parkbomen en weilanden.">
 </picture>
 
@@ -749,7 +760,7 @@
         <figure>
           <picture>
             <source type="image/avif" srcset="sfeer-geverszaal.avif">
-            <img src="sfeer-geverszaal.jpg" loading="lazy" decoding="async"
+            <img src="sfeer-geverszaal.jpg" width="640" height="480" loading="lazy" decoding="async"
                  alt="De Geverszaal: hoge zaal met muurschilderingen van middeleeuwse muzikanten en een grote schouw.">
           </picture>
           <figcaption>Geverszaal<span>Muurschilderingen en een monumentale schouw</span></figcaption>
@@ -761,7 +772,7 @@
         <figure>
           <picture>
             <source type="image/avif" srcset="sfeer-assendelftzaal.avif">
-            <img src="sfeer-assendelftzaal.jpg" loading="lazy" decoding="async"
+            <img src="sfeer-assendelftzaal.jpg" width="640" height="480" loading="lazy" decoding="async"
                  alt="De Assendelftzaal: een lange zaal met roodgeschilderde balken, smeedijzeren kroonluchters en dieproze gordijnen.">
           </picture>
           <figcaption>Assendelftzaal<span>Smeedijzeren kroonluchters onder rode balken</span></figcaption>
@@ -773,7 +784,7 @@
         <figure>
           <picture>
             <source type="image/avif" srcset="sfeer-deutzzaal.avif">
-            <img src="sfeer-deutzzaal.jpg" loading="lazy" decoding="async"
+            <img src="sfeer-deutzzaal.jpg" width="640" height="480" loading="lazy" decoding="async"
                  alt="De Deutzzaal: groen geschilderde lambrisering, een beschilderd plafond met wapenschilden en leren fauteuils op een houten vloer.">
           </picture>
           <figcaption>Deutzzaal<span>Beschilderd plafond met wapenschilden</span></figcaption>
@@ -785,7 +796,7 @@
         <figure>
           <picture>
             <source type="image/avif" srcset="sfeer-bar.avif">
-            <img src="sfeer-bar.jpg" loading="lazy" decoding="async"
+            <img src="sfeer-bar.jpg" width="640" height="480" loading="lazy" decoding="async"
                  alt="De bar van het slot: houten tap met barkrukken op een rood geblokte plavuizenvloer.">
           </picture>
           <figcaption>De bar<span>Plavuizen, barkrukken en gewelfd plafond</span></figcaption>
@@ -802,6 +813,8 @@
   <p>Stayokay Heemskerk zit in Slot Assumburg zelf. Behoor je tot de eerste 100 boekingen? Dan krijg je 25% korting op een overnachting &mdash; alleen voor de nacht van 7 maart 2027 en op basis van beschikbaarheid.</p>
   <p class="boeken">Stuur een mailtje naar <a href="mailto:heemskerk@stayokay.com">heemskerk@stayokay.com</a> met de volgende info: je naam, het aantal personen, het type kamer of bed op slaapzaal, en de bevestiging dat je een entreekaartje voor Bier op &rsquo;t Slot hebt geboekt.</p>
 </div>
+
+</main>
 
 <!-- ============ LIGHTBOX ============ -->
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Sfeerfoto's" hidden>
