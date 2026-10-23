@@ -42,8 +42,15 @@ Alles staat in de root, geen build-stap, geen dependencies.
 - `luchtfoto.{avif,jpg}` — 1600px, volle band tussen de tickets en de zalensectie;
   laat het terrein zien voordat de pagina naar binnen gaat.
 - `favicon-{32,48,64,128,192}.png`, `apple-touch-icon.png` (180px) — het bierglas met kantelen,
-  amber op donkerblauw. Gekozen boven een wit mok-icoon omdat dat op 16px onleesbaar
-  werd: dit werkt op silhouet, niet op detail. Aangeleverd als 1024px JPEG en teruggeschaald met `sips`. Geen `.ico`:
+  amber, achtergrond transparant. Gekozen boven een wit mok-icoon omdat dat op 16px
+  onleesbaar werd: dit werkt op silhouet, niet op detail.
+- In de bron-JPEG besloeg de vorm maar 34% van de breedte, met een marineblauw vlak
+  eromheen. Die achtergrond is weggesneden en er is strak op de vorm bijgesneden,
+  waardoor het glas nu de volle hoogte vult. `sips` kan geen kleur wegsnijden; dat is
+  gedaan met `scratchpad/knip.py`, dat de alpha berekent als mengverhouding tussen
+  marine en amber zodat de antialiasde randen geen donker randje houden.
+- `apple-touch-icon.png` heeft wél een achtergrond (`--stone-900`, #1c1a17): iOS vult
+  transparante delen van een beginschermicoon met zwart, dus die moet dicht zijn. Aangeleverd als 1024px JPEG en teruggeschaald met `sips`. Geen `.ico`:
   `sips` kan dat formaat niet schrijven, en de `<link rel="icon">`-tags dekken alle
   browsers die er nog toe doen. Bewust ook géén 16×16: browsers kozen die voor het
   16pt-tabblad en schaalden hem op retina 2× op, wat onscherp oogt. Met 32 als
