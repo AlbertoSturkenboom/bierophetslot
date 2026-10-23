@@ -41,11 +41,18 @@ Alles staat in de root, geen build-stap, geen dependencies.
   verder linkvrij is gehouden.
 - `luchtfoto.{avif,jpg}` — 1600px, volle band tussen de tickets en de zalensectie;
   laat het terrein zien voordat de pagina naar binnen gaat.
-- `favicon-32.png`, `favicon-16.png`, `apple-touch-icon.png` (180px) — het bierglas met kantelen,
+- `favicon-{32,48,64,128,192}.png`, `apple-touch-icon.png` (180px) — het bierglas met kantelen,
   amber op donkerblauw. Gekozen boven een wit mok-icoon omdat dat op 16px onleesbaar
   werd: dit werkt op silhouet, niet op detail. Aangeleverd als 1024px JPEG en teruggeschaald met `sips`. Geen `.ico`:
   `sips` kan dat formaat niet schrijven, en de `<link rel="icon">`-tags dekken alle
-  browsers die er nog toe doen.
+  browsers die er nog toe doen. Bewust ook géén 16×16: browsers kozen die voor het
+  16pt-tabblad en schaalden hem op retina 2× op, wat onscherp oogt. Met 32 als
+  kleinste maat wordt er altijd naar beneden geschaald.
+
+De bron is een JPEG van 1024px. Een favicon van vlakke kleurvlakken hoort eigenlijk
+een SVG te zijn: die blijft op elke grootte en elke pixeldichtheid haarscherp, terwijl
+een raster bij het verkleinen altijd wat zachte randen houdt. Komt er ooit een SVG of
+een PNG met transparantie van de ontwerper, vervang de set daar dan door.
 
 De hero gebruikt `<picture>` met art direction: brede foto op desktop, staande op mobiel.
 Per foto drie formaten, browser kiest zelf (AVIF → WebP → JPEG).
