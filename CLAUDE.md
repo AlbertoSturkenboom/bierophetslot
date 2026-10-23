@@ -45,8 +45,12 @@ Alles staat in de root, geen build-stap, geen dependencies.
   amber, achtergrond transparant. Gekozen boven een wit mok-icoon omdat dat op 16px
   onleesbaar werd: dit werkt op silhouet, niet op detail.
 - In de bron-JPEG besloeg de vorm maar 34% van de breedte, met een marineblauw vlak
-  eromheen. Die achtergrond is weggesneden en er is strak op de vorm bijgesneden,
-  waardoor het glas nu de volle hoogte vult. `sips` kan geen kleur wegsnijden; dat is
+  eromheen. Die achtergrond is weggesneden en er is strak op de vorm bijgesneden.
+  Daarna is het glas breder gemaakt en de steel ingekort met `scratchpad/hervorm.py`:
+  dat herkent de steel aan zijn breedte en drukt alléén die band verticaal samen, zodat
+  kroon, kelk en voet hun verhouding houden. Resultaat: de vorm vult nu 88% van de
+  breedte en 100% van de hoogte, tegen 51% breed in het origineel. Verder oprekken kan,
+  maar dan wordt de kelk zichtbaar gedrongen. `sips` kan geen kleur wegsnijden; dat is
   gedaan met `scratchpad/knip.py`, dat de alpha berekent als mengverhouding tussen
   marine en amber zodat de antialiasde randen geen donker randje houden.
 - `apple-touch-icon.png` heeft wél een achtergrond (`--stone-900`, #1c1a17): iOS vult
