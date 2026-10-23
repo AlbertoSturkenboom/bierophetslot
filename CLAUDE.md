@@ -41,18 +41,19 @@ Alles staat in de root, geen build-stap, geen dependencies.
   verder linkvrij is gehouden.
 - `luchtfoto.{avif,jpg}` — 1600px, volle band tussen de tickets en de zalensectie;
   laat het terrein zien voordat de pagina naar binnen gaat.
-- `favicon-{32,48,64,128,192}.png`, `apple-touch-icon.png` (180px) — het bierglas met kantelen,
-  amber, achtergrond transparant. Gekozen boven een wit mok-icoon omdat dat op 16px
-  onleesbaar werd: dit werkt op silhouet, niet op detail.
-- In de bron-JPEG besloeg de vorm maar 34% van de breedte, met een marineblauw vlak
-  eromheen. Die achtergrond is weggesneden en er is strak op de vorm bijgesneden.
-  Daarna is het glas breder gemaakt en de steel ingekort met `scratchpad/hervorm.py`:
-  dat herkent de steel aan zijn breedte en drukt alléén die band verticaal samen, zodat
-  kroon, kelk en voet hun verhouding houden. Resultaat: de vorm vult nu 88% van de
-  breedte en 100% van de hoogte, tegen 51% breed in het origineel. Verder oprekken kan,
-  maar dan wordt de kelk zichtbaar gedrongen. `sips` kan geen kleur wegsnijden; dat is
-  gedaan met `scratchpad/knip.py`, dat de alpha berekent als mengverhouding tussen
-  marine en amber zodat de antialiasde randen geen donker randje houden.
+- `favicon-{16,32,48,64,128,192,512}.png`, `favicon.ico`, `apple-touch-icon.png` (180px)
+  — de bierpul met kantelen en raampjes, amber op transparant.
+- De bron is een JPEG van 1024px waarin de vorm maar 42% van de breedte besloeg, op een
+  marineblauw vlak. Dat vlak is weggesneden met `scratchpad/knip.py`, dat de alpha
+  berekent als mengverhouding tussen achtergrond- en voorgrondkleur zodat de antialiasde
+  randen geen donker randje houden; daarna is het wit omgekleurd naar het amber
+  (#f69e08) van het eerdere glas-icoon. Strak bijgesneden vult de pul 74% van de
+  breedte en 100% van de hoogte.
+- Niet verder oprekken: bij ~98% wordt het oor zichtbaar uitgerekt en oogt de pul
+  vervormd in plaats van breder. Getest en verworpen.
+- Bekend compromis: op 16px lopen de kantelen en de drie raampjes in elkaar over. Op
+  32px en groter leest de pul juist voller dan het eerdere glas-icoon, en op retina
+  pakt de browser de 32 voor een tabblad van 16 punten. Die afweging is bewust gemaakt.
 - `apple-touch-icon.png` heeft wél een achtergrond (`--stone-900`, #1c1a17): iOS vult
   transparante delen van een beginschermicoon met zwart, dus die moet dicht zijn. Aangeleverd als 1024px JPEG en teruggeschaald met `sips`. Geen `.ico`:
   `sips` kan geen ICO schrijven, dus `favicon.ico` is met de hand samengesteld in
