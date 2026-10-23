@@ -36,6 +36,11 @@ Alles staat in de root, geen build-stap, geen dependencies.
 - `hero-tall.{avif,webp,jpg}` — 1200×1800, staande foto van de toren, voor schermen <700px
 - `sfeer-{geverszaal,assendelftzaal,deutzzaal,bar}.{avif,jpg}` — thumbnails, 640px breed
 - `sfeer-{…}-groot.{avif,jpg}` — dezelfde foto's op 1800px, voor de lightbox
+- `logo-wit.png` en `logo-koper.png` — hetzelfde pulmerk als de favicon, 192px.
+  Wit staat in de hero boven de titel (daar is de sluier donker genoeg), koper in de
+  footer. Amber bleek daar te bleek op het crème: te weinig contrast. De footer had
+  `opacity:.75` op het hele blok staan; die zit nu op de tekst, anders verbleekt het
+  merk mee.
 - `stayokay-logo.png` — 400px breed, met transparantie; staat linksboven over de hero,
   op dezelfde plek als in de header van stayokay.com. Bewust géén link, omdat de hero
   verder linkvrij is gehouden.

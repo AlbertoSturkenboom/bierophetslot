@@ -115,6 +115,16 @@
     color:var(--stone-100);
   }
 
+  /* Festivalmerk boven de titel. De sluier is onderin het sterkst, dus hier
+     leest wit goed; de schaduw houdt het los van de foto. */
+  .hero .merk{
+    display:block;
+    width:auto;
+    height:clamp(2.75rem,8vw,4rem);
+    margin:0 auto 1.1rem;
+    filter:drop-shadow(0 2px 18px rgba(0,0,0,.75));
+  }
+
   .hero .eyebrow{
     font-size:1.05rem;
     letter-spacing:.14em;
@@ -619,9 +629,18 @@
     padding:2.5rem 1.5rem;
     font-size:.85rem;
     color:var(--stone-800);
-    opacity:.75;
   }
+  /* De doorzichtigheid zit op de tekst, niet op de footer zelf: anders
+     verbleekt het merk mee en verliest het koper zijn kracht. */
+  footer p{margin:0;opacity:.75;}
   footer a{color:var(--copper-dark);}
+  footer .credit{font-size:.78rem;opacity:.8;}
+  footer .merk-voet{
+    display:block;
+    width:auto;
+    height:2.5rem;
+    margin:0 auto 1rem;
+  }
 </style>
 </head>
 <body>
@@ -651,6 +670,8 @@
   </div>
 
   <div class="hero-content">
+    <!-- alt leeg: de h1 eronder noemt de festivalnaam al, dus dit is decoratief -->
+    <img class="merk fade-up" src="logo-wit.png" alt="" width="192" height="192">
     <p class="eyebrow fade-up d1">Stayokay Heemskerk &times; Zeglis Brouwerij</p>
     <h1 class="fade-up d2">Bier op &rsquo;t Slot Festival</h1>
     <p class="tagline fade-up d3">Proef het verleden, beleef het bier.</p>
@@ -848,8 +869,11 @@
 </div>
 
 <footer>
-  bierophetslot.nl &nbsp;&middot;&nbsp; <a href="mailto:info@bierophetslot.nl">info@bierophetslot.nl</a><br>
-  <span style="font-size:.78rem;opacity:.8;">Fotografie: Taco van der Werf</span>
+  <img class="merk-voet" src="logo-koper.png" alt="" width="192" height="192">
+  <p>
+    bierophetslot.nl &nbsp;&middot;&nbsp; <a href="mailto:info@bierophetslot.nl">info@bierophetslot.nl</a><br>
+    <span class="credit">Fotografie: Taco van der Werf</span>
+  </p>
 </footer>
 
 <script>
