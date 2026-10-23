@@ -41,8 +41,9 @@ Alles staat in de root, geen build-stap, geen dependencies.
   verder linkvrij is gehouden.
 - `luchtfoto.{avif,jpg}` — 1600px, volle band tussen de tickets en de zalensectie;
   laat het terrein zien voordat de pagina naar binnen gaat.
-- `favicon-32.png`, `favicon-16.png`, `apple-touch-icon.png` (180px) — het bier-/kasteelicoon,
-  wit op donkerblauw. Aangeleverd als 1024px JPEG en teruggeschaald met `sips`. Geen `.ico`:
+- `favicon-32.png`, `favicon-16.png`, `apple-touch-icon.png` (180px) — het bierglas met kantelen,
+  amber op donkerblauw. Gekozen boven een wit mok-icoon omdat dat op 16px onleesbaar
+  werd: dit werkt op silhouet, niet op detail. Aangeleverd als 1024px JPEG en teruggeschaald met `sips`. Geen `.ico`:
   `sips` kan dat formaat niet schrijven, en de `<link rel="icon">`-tags dekken alle
   browsers die er nog toe doen.
 
