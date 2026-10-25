@@ -147,6 +147,17 @@ zonder vermelding op de pagina. Navragen bij de organisatie voordat de site live
 - E-mailpakket opzeggen vóór augustus 2027 (gaat dan van €0,99 naar €1,99 per maand)
 - Maker van de luchtfoto achterhalen en zo nodig een vermelding toevoegen
 
+## Route
+
+De sectie "Zo kom je er" staat tussen de zalen en Stayokay: eerst hoe je er komt, dan
+waar je slaapt. De reisinformatie (A9-afslag, bus 72 vanaf station Beverwijk, halte
+Jan van Kuikweg, gratis parkeren met laadpaal) komt van de pagina van Stayokay
+Heemskerk zelf — niet verzinnen, daar nakijken bij wijzigingen.
+
+Bewust een **link** naar de kaart en geen ingesloten Google Maps: een iframe laadt een
+tracker van derden op elke paginaweergave, en dan heb je een cookiemelding nodig. Een
+link kost niets tot iemand erop klikt.
+
 ## DNS
 
 Het domein staat bij mijn.host; DNS-beheer daar. De zone bevat naast elkaar:
