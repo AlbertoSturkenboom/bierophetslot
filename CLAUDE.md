@@ -154,6 +154,9 @@ waar je slaapt. De reisinformatie (A9-afslag, bus 72 vanaf station Beverwijk, ha
 Jan van Kuikweg, gratis parkeren met laadpaal) komt van de pagina van Stayokay
 Heemskerk zelf — niet verzinnen, daar nakijken bij wijzigingen.
 
+Openbaar vervoer staat bewust vóór de auto: bij een bierfestival is dat de verstandigste
+manier om te komen. Niet omdraaien.
+
 Bewust een **link** naar de kaart en geen ingesloten Google Maps: een iframe laadt een
 tracker van derden op elke paginaweergave, en dan heb je een cookiemelding nodig. Een
 link kost niets tot iemand erop klikt.
